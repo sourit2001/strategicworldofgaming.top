@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>World of Gaming - Strategic Online Gaming Platform</title>
-    <meta name="description" content="Experience the best online gaming with World of Gaming. Play Shell Shockers and other strategic games in your browser.">
+    <meta name="description" content="Experience the best online gaming with World of Gaming. Play 1v1.LOL, Geometry Vibes and other strategic games in your browser.">
+    <meta name="keywords" content="online games, strategic games, 1v1.LOL, Geometry Vibes, battle royale, free games">
     <link rel="canonical" href="https://strategicworldofgaming.top" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-R01517MCPD"></script>
@@ -57,6 +58,34 @@
             margin-bottom: 2rem;
         }
 
+        /* Navigation */
+        .game-nav {
+            display: flex;
+            justify-content: center;
+            margin: 1rem 0;
+            gap: 1rem;
+        }
+
+        .game-nav-btn {
+            padding: 0.8rem 1.5rem;
+            background: #007AFF;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .game-nav-btn:hover {
+            background: #0056b3;
+        }
+
+        .game-nav-btn.active {
+            background: #004080;
+        }
+
         /* Game container */
         .game-container {
             position: relative;
@@ -64,6 +93,11 @@
             height: 0;
             padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
             margin: 2rem 0;
+            display: none;
+        }
+
+        .game-container.active {
+            display: block;
         }
 
         .game-frame {
@@ -78,6 +112,14 @@
         }
 
         /* Content sections */
+        .game-info {
+            display: none;
+        }
+
+        .game-info.active {
+            display: block;
+        }
+
         .section {
             margin: 2rem 0;
             padding: 1.5rem;
@@ -98,6 +140,15 @@
             color: #1d1d1f;
         }
 
+        ul {
+            margin-bottom: 1rem;
+            margin-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
         /* Responsive design */
         @media (max-width: 768px) {
             h1 {
@@ -111,6 +162,17 @@
             .section {
                 padding: 1rem;
             }
+            
+            .game-nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            
+            .game-nav-btn {
+                width: 100%;
+                max-width: 300px;
+            }
         }
     </style>
 </head>
@@ -118,12 +180,18 @@
     <header>
         <div class="container">
             <h1>World of Gaming - Strategic Gaming Hub</h1>
-            <p class="tagline">Experience immersive online gaming with 1v1.LOL</p>
+            <p class="tagline">Experience immersive online gaming with our collection of games</p>
         </div>
     </header>
 
     <main class="container">
-        <div class="game-container">
+        <div class="game-nav">
+            <button class="game-nav-btn active" onclick="switchGame('game1')">1v1.LOL</button>
+            <button class="game-nav-btn" onclick="switchGame('game2')">Geometry Vibes</button>
+        </div>
+
+        <!-- 1v1.LOL Game -->
+        <div id="game1" class="game-container active">
             <iframe src="https://1v1.lol/" 
                     class="game-frame"
                     allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -131,23 +199,95 @@
             </iframe>
         </div>
 
-        <section class="section">
-            <h2>About 1v1.LOL</h2>
-            <p>1v1.LOL is an exciting battle royale game that combines building mechanics with intense shooting action. Build your fortress, collect weapons, and compete against players worldwide in this fast-paced combat game.</p>
-        </section>
+        <!-- Geometry Vibes Game -->
+        <div id="game2" class="game-container">
+            <iframe src="https://www.twoplayergames.org/game/geometry-vibes" 
+                    class="game-frame"
+                    allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
+        </div>
 
-        <section class="section">
-            <h2>Game Features</h2>
-            <p>• Build and shoot mechanics similar to Fortnite</p>
-            <p>• Multiple game modes including 1v1, Box Fights, and Battle Royale</p>
-            <p>• Cross-platform gameplay</p>
-            <p>• Free-to-play with regular updates</p>
-        </section>
+        <!-- 1v1.LOL Info -->
+        <div id="game1-info" class="game-info active">
+            <section class="section">
+                <h2>About 1v1.LOL</h2>
+                <p>1v1.LOL is an exciting battle royale game that combines building mechanics with intense shooting action. Build your fortress, collect weapons, and compete against players worldwide in this fast-paced combat game.</p>
+            </section>
 
-        <section class="section">
-            <h2>How to Play</h2>
-            <p>Use WASD to move, mouse to aim and shoot. Press Q to enter building mode, and use your mouse to place building pieces. Master both building and shooting to become the ultimate champion!</p>
-        </section>
+            <section class="section">
+                <h2>Game Features</h2>
+                <p>• Build and shoot mechanics similar to Fortnite</p>
+                <p>• Multiple game modes including 1v1, Box Fights, and Battle Royale</p>
+                <p>• Cross-platform gameplay</p>
+                <p>• Free-to-play with regular updates</p>
+            </section>
+
+            <section class="section">
+                <h2>How to Play</h2>
+                <p>Use WASD to move, mouse to aim and shoot. Press Q to enter building mode, and use your mouse to place building pieces. Master both building and shooting to become the ultimate champion!</p>
+            </section>
+        </div>
+
+        <!-- Geometry Vibes Info -->
+        <div id="game2-info" class="game-info">
+            <section class="section">
+                <h2>About Geometry Vibes</h2>
+                <p>Geometry Vibes is a reaction-based arcade game where you avoid obstacles, traps and spikes that come at you in waves. Your goal in the game is to keep your arrow on the route and take it as far as possible. Geometry Vibes, where the excitement never ends, invites you to challenge.</p>
+            </section>
+
+            <section class="section">
+                <h2>Game Features</h2>
+                <ul>
+                    <li>Simple gameplay with challenging mechanics</li>
+                    <li>Multiple game modes: Classic, Endless, and Race Mode</li>
+                    <li>2, 3, and 4 player support for multiplayer fun</li>
+                    <li>Relaxing music and reactions</li>
+                    <li>Ability to purchase new arrow skins, tails and colors</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>How to Play</h2>
+                <ol>
+                    <li>Click "MOUSE LEFT-CLICK" or "UP ARROW" and hold to fly up</li>
+                    <li>Release the button to dive down</li>
+                    <li>Try to continue without hitting obstacles</li>
+                    <li>In multiplayer modes, players are controlled with "UP ARROW", "H" and "L"</li>
+                </ol>
+                <p>The game is simple to play but difficult to master. Focus on timing, rhythm, and anticipation to improve your skills!</p>
+            </section>
+
+            <section class="section">
+                <h2>Game Modes</h2>
+                <p><strong>Classic Mode:</strong> 10 levels with increasing difficulty. When you reach level 10, the game becomes extremely challenging.</p>
+                <p><strong>Endless Mode:</strong> No limit mode where you push yourself to improve your record. Speed increases with distance.</p>
+                <p><strong>Race Mode:</strong> Challenge your friends in multiplayer mode with 2, 3, or 4 players on the same keyboard.</p>
+            </section>
+        </div>
     </main>
+
+    <script>
+        function switchGame(gameId) {
+            // Hide all games and info
+            document.querySelectorAll('.game-container').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.querySelectorAll('.game-info').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.querySelectorAll('.game-nav-btn').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Show selected game and info
+            document.getElementById(gameId).classList.add('active');
+            document.getElementById(gameId + '-info').classList.add('active');
+            
+            // Update active button
+            const index = gameId.replace('game', '');
+            document.querySelectorAll('.game-nav-btn')[index-1].classList.add('active');
+        }
+    </script>
 </body>
 </html> 
