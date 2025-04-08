@@ -1,177 +1,546 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World of Gaming - Strategic Online Gaming Platform</title>
-    <meta name="description" content="Experience the best online gaming with World of Gaming. Play 1v1.LOL, Geometry Vibes and other strategic games in your browser.">
-    <meta name="keywords" content="online games, strategic games, 1v1.LOL, Geometry Vibes, battle royale, free games">
-    <link rel="canonical" href="https://strategicworldofgaming.top" />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R01517MCPD"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-R01517MCPD');
-    </script>
+    <title>多彩游戏世界 - 免费HTML5游戏平台</title>
+    <meta name="description" content="享受免费在线HTML5游戏，包括动作游戏、益智游戏、体育游戏等多种类型，无需下载即可玩。">
+    <meta name="keywords" content="免费游戏, 在线游戏, HTML5游戏, 动作游戏, 益智游戏, 体育游戏">
     <style>
-        /* Reset and base styles */
+        /* 重置样式 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
         }
-
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f5f5f7;
+            color: #1d1d1f;
             line-height: 1.6;
-            color: #000000;
-            background: #ffffff;
         }
-
-        /* Container */
+        
+        /* 头部样式 */
+        header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 15px 0;
+        }
+        
         .container {
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 15px;
         }
-
-        /* Header */
-        header {
-            background: #000000;
-            color: #ffffff;
-            padding: 1rem;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #ffffff;
-        }
-
-        .tagline {
-            font-size: 1.2rem;
-            color: #86868b;
-            margin-bottom: 2rem;
-        }
-
-        /* Navigation */
-        .game-nav {
+        
+        header .container {
             display: flex;
-            justify-content: center;
-            margin: 1rem 0;
-            gap: 1rem;
+            justify-content: space-between;
+            align-items: center;
         }
-
-        .game-nav-btn {
-            padding: 0.8rem 1.5rem;
-            background: #007AFF;
-            color: white;
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #7a86cb);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .search-box {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .search-box input {
+            padding: 8px 16px;
+            border-radius: 20px;
             border: none;
-            border-radius: 8px;
+            background: #e8e8ed;
+            width: 250px;
+            outline: none;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        
+        .search-box input:focus {
+            background: #fff;
+            box-shadow: 0 0 0 2px rgba(0, 125, 250, 0.2);
+        }
+        
+        .search-box button {
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: none;
+            background: #007aff;
+            color: white;
+            font-weight: 500;
             cursor: pointer;
-            font-size: 1rem;
-            font-weight: bold;
             transition: background 0.3s;
         }
-
-        .game-nav-btn:hover {
-            background: #0056b3;
+        
+        .search-box button:hover {
+            background: #0062cc;
         }
-
-        .game-nav-btn.active {
-            background: #004080;
+        
+        /* 主容器样式 */
+        .main-container {
+            display: flex;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 1200px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
-
-        /* Game container */
-        .game-container {
-            position: relative;
-            width: 100%;
-            height: 0;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            margin: 2rem 0;
+        
+        /* 侧边栏样式 */
+        .sidebar {
+            width: 250px;
+            background: white;
+            padding: 20px 0;
+            border-right: 1px solid #e8e8ed;
+        }
+        
+        .side-nav h3 {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #6e6e73;
+            margin-bottom: 5px;
+        }
+        
+        .side-nav ul {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .side-nav ul li {
+            padding: 0;
+        }
+        
+        .category-link {
+            display: block;
+            padding: 10px 25px;
+            text-decoration: none;
+            color: #1d1d1f;
+            font-weight: 500;
+            border-left: 3px solid transparent;
+            transition: all 0.2s;
+        }
+        
+        .category-link:hover {
+            background: #f5f5f7;
+        }
+        
+        .category-link.active {
+            border-left-color: #007aff;
+            background: #f0f0f5;
+            color: #007aff;
+        }
+        
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 10px 20px;
+        }
+        
+        .tag {
+            background: #f0f0f5;
+            color: #6e6e73;
+            border-radius: 15px;
+            padding: 5px 12px;
+            font-size: 0.8rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        
+        .tag:hover {
+            background: #e0e0e5;
+            color: #007aff;
+        }
+        
+        /* 内容区域样式 */
+        .content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            max-height: calc(100vh - 100px);
+        }
+        
+        .game-section {
             display: none;
         }
-
-        .game-container.active {
+        
+        .game-section.active {
             display: block;
         }
-
-        .game-frame {
+        
+        .section-header {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e8e8ed;
+        }
+        
+        .section-header h2 {
+            font-size: 1.5rem;
+            color: #1d1d1f;
+        }
+        
+        .game-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .game-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+        
+        .game-thumbnail {
+            position: relative;
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+        }
+        
+        .game-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .game-card:hover .game-thumbnail img {
+            transform: scale(1.05);
+        }
+        
+        .game-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            background: rgba(0,0,0,0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .game-card:hover .game-overlay {
+            opacity: 1;
+        }
+        
+        .play-btn {
+            background: #007aff;
+            color: white;
             border: none;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s;
         }
-
-        /* Content sections */
+        
+        .play-btn:hover {
+            background: #0062cc;
+        }
+        
         .game-info {
-            display: none;
+            padding: 15px;
         }
-
-        .game-info.active {
-            display: block;
-        }
-
-        .section {
-            margin: 2rem 0;
-            padding: 1.5rem;
-            background: #f5f5f7;
-            border-radius: 12px;
-        }
-
-        h2 {
-            color: #1d1d1f;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #007AFF;
-            padding-bottom: 0.5rem;
-        }
-
-        p {
-            margin-bottom: 1rem;
+        
+        .game-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
             color: #1d1d1f;
         }
-
-        ul {
-            margin-bottom: 1rem;
-            margin-left: 1.5rem;
+        
+        .game-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
         }
-
-        li {
-            margin-bottom: 0.5rem;
+        
+        .game-tag {
+            background: #f0f0f5;
+            color: #6e6e73;
+            border-radius: 15px;
+            padding: 3px 10px;
+            font-size: 0.75rem;
+            margin-right: 5px;
         }
-
-        /* Responsive design */
+        
+        .game-rating {
+            color: #f9a825;
+            font-size: 0.9rem;
+        }
+        
+        .game-desc {
+            font-size: 0.9rem;
+            color: #6e6e73;
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.4;
+        }
+        
+        /* 游戏播放器样式 */
+        .game-player {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+        }
+        
+        .player-header h2 {
+            color: white;
+            font-size: 1.2rem;
+            max-width: 70%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .close-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .close-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .game-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .clean-game-container {
+            position: relative;
+            width: 85%;
+            height: 85%;
+            max-width: 1280px;
+            max-height: 720px;
+        }
+        
+        .game-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: black;
+        }
+        
+        .game-tip {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            transition: opacity 0.5s;
+        }
+        
+        /* 游戏详情 */
+        .game-details {
+            position: relative;
+            background: #1d1d1f;
+            color: white;
+            max-height: 40%;
+            overflow-y: auto;
+            transition: max-height 0.3s;
+        }
+        
+        .game-details.collapsed {
+            max-height: 40px;
+        }
+        
+        .game-details-toggle {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: #1d1d1f;
+            border: none;
+            color: #999;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 0.9rem;
+            z-index: 10;
+        }
+        
+        .game-details-toggle:hover {
+            color: white;
+        }
+        
+        #game-details-content {
+            padding: 0 20px 20px;
+        }
+        
+        .game-section {
+            margin-bottom: 20px;
+        }
+        
+        .game-section h3 {
+            margin-bottom: 10px;
+            color: #ccc;
+            font-size: 1rem;
+        }
+        
+        .game-section p, .game-section ul {
+            color: #999;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .game-section ul {
+            margin-left: 20px;
+        }
+        
+        .game-section li {
+            margin-bottom: 5px;
+        }
+        
+        /* 游戏返回信息 */
+        .game-return-message {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            max-width: 400px;
+            text-align: center;
+            z-index: 1001;
+        }
+        
+        .game-return-message p {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .game-return-message button {
+            background: #007aff;
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+        
+        /* 页脚样式 */
+        footer {
+            background: white;
+            padding: 20px 0;
+            text-align: center;
+            color: #6e6e73;
+            font-size: 0.9rem;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+        }
+        
+        /* 适应不同设备 */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            .container {
-                padding: 10px;
-            }
-
-            .section {
-                padding: 1rem;
-            }
-            
-            .game-nav {
+            .main-container {
                 flex-direction: column;
-                align-items: center;
-                gap: 0.5rem;
             }
             
-            .game-nav-btn {
+            .sidebar {
                 width: 100%;
-                max-width: 300px;
+                border-right: none;
+                border-bottom: 1px solid #e8e8ed;
+                padding: 10px 0;
+            }
+            
+            .side-nav ul {
+                display: flex;
+                overflow-x: auto;
+                padding: 0 10px;
+                margin-bottom: 15px;
+            }
+            
+            .side-nav ul li {
+                flex-shrink: 0;
+            }
+            
+            .category-link {
+                border-left: none;
+                border-bottom: 3px solid transparent;
+                padding: 10px 15px;
+            }
+            
+            .category-link.active {
+                border-left-color: transparent;
+                border-bottom-color: #007aff;
+            }
+            
+            .clean-game-container {
+                width: 100%;
+                height: 80%;
+            }
+            
+            .logo h1 {
+                font-size: 1.4rem;
+            }
+            
+            .search-box input {
+                width: 150px;
             }
         }
     </style>
@@ -179,115 +548,642 @@
 <body>
     <header>
         <div class="container">
-            <h1>World of Gaming - Strategic Gaming Hub</h1>
-            <p class="tagline">Experience immersive online gaming with our collection of games</p>
+            <div class="logo">
+                <h1>多彩游戏世界</h1>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="搜索游戏...">
+                <button type="submit">搜索</button>
+            </div>
         </div>
     </header>
 
-    <main class="container">
-        <div class="game-nav">
-            <button class="game-nav-btn active" onclick="switchGame('game1')">1v1.LOL</button>
-            <button class="game-nav-btn" onclick="switchGame('game2')">Geometry Vibes</button>
-        </div>
-
-        <!-- 1v1.LOL Game -->
-        <div id="game1" class="game-container active">
-            <iframe src="https://1v1.lol/" 
-                    class="game-frame"
-                    allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-            </iframe>
-        </div>
-
-        <!-- Geometry Vibes Game -->
-        <div id="game2" class="game-container">
-            <iframe src="https://www.twoplayergames.org/game/geometry-vibes" 
-                    class="game-frame"
-                    allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-            </iframe>
-        </div>
-
-        <!-- 1v1.LOL Info -->
-        <div id="game1-info" class="game-info active">
-            <section class="section">
-                <h2>About 1v1.LOL</h2>
-                <p>1v1.LOL is an exciting battle royale game that combines building mechanics with intense shooting action. Build your fortress, collect weapons, and compete against players worldwide in this fast-paced combat game.</p>
-            </section>
-
-            <section class="section">
-                <h2>Game Features</h2>
-                <p>• Build and shoot mechanics similar to Fortnite</p>
-                <p>• Multiple game modes including 1v1, Box Fights, and Battle Royale</p>
-                <p>• Cross-platform gameplay</p>
-                <p>• Free-to-play with regular updates</p>
-            </section>
-
-            <section class="section">
-                <h2>How to Play</h2>
-                <p>Use WASD to move, mouse to aim and shoot. Press Q to enter building mode, and use your mouse to place building pieces. Master both building and shooting to become the ultimate champion!</p>
-            </section>
-        </div>
-
-        <!-- Geometry Vibes Info -->
-        <div id="game2-info" class="game-info">
-            <section class="section">
-                <h2>About Geometry Vibes</h2>
-                <p>Geometry Vibes is a reaction-based arcade game where you avoid obstacles, traps and spikes that come at you in waves. Your goal in the game is to keep your arrow on the route and take it as far as possible. Geometry Vibes, where the excitement never ends, invites you to challenge.</p>
-            </section>
-
-            <section class="section">
-                <h2>Game Features</h2>
+    <div class="main-container">
+        <!-- 左侧导航栏 -->
+        <aside class="sidebar">
+            <nav class="side-nav">
+                <h3>游戏分类</h3>
                 <ul>
-                    <li>Simple gameplay with challenging mechanics</li>
-                    <li>Multiple game modes: Classic, Endless, and Race Mode</li>
-                    <li>2, 3, and 4 player support for multiplayer fun</li>
-                    <li>Relaxing music and reactions</li>
-                    <li>Ability to purchase new arrow skins, tails and colors</li>
+                    <li><a href="#" class="category-link active" data-category="featured">精选游戏</a></li>
+                    <li><a href="#" class="category-link" data-category="action">动作游戏</a></li>
+                    <li><a href="#" class="category-link" data-category="puzzle">益智游戏</a></li>
+                    <li><a href="#" class="category-link" data-category="sports">体育游戏</a></li>
+                    <li><a href="#" class="category-link" data-category="strategy">策略游戏</a></li>
                 </ul>
+                
+                <h3>热门标签</h3>
+                <div class="tag-cloud">
+                    <a href="#" class="tag">射击</a>
+                    <a href="#" class="tag">益智</a>
+                    <a href="#" class="tag">多人</a>
+                    <a href="#" class="tag">街机</a>
+                    <a href="#" class="tag">体育</a>
+                    <a href="#" class="tag">物理</a>
+                    <a href="#" class="tag">休闲</a>
+                    <a href="#" class="tag">冒险</a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- 右侧内容区域 -->
+        <main class="content">
+            <!-- 精选游戏区域 -->
+            <section id="featured" class="game-section active">
+                <div class="section-header">
+                    <h2>精选游戏</h2>
+                </div>
+                <div class="game-cards">
+                    <!-- 游戏卡片通过JavaScript动态加载 -->
+                </div>
             </section>
 
-            <section class="section">
-                <h2>How to Play</h2>
-                <ol>
-                    <li>Click "MOUSE LEFT-CLICK" or "UP ARROW" and hold to fly up</li>
-                    <li>Release the button to dive down</li>
-                    <li>Try to continue without hitting obstacles</li>
-                    <li>In multiplayer modes, players are controlled with "UP ARROW", "H" and "L"</li>
-                </ol>
-                <p>The game is simple to play but difficult to master. Focus on timing, rhythm, and anticipation to improve your skills!</p>
+            <!-- 动作游戏区域 -->
+            <section id="action" class="game-section">
+                <div class="section-header">
+                    <h2>动作游戏</h2>
+                </div>
+                <div class="game-cards">
+                    <!-- 动作游戏卡片通过JavaScript动态加载 -->
+                </div>
             </section>
 
-            <section class="section">
-                <h2>Game Modes</h2>
-                <p><strong>Classic Mode:</strong> 10 levels with increasing difficulty. When you reach level 10, the game becomes extremely challenging.</p>
-                <p><strong>Endless Mode:</strong> No limit mode where you push yourself to improve your record. Speed increases with distance.</p>
-                <p><strong>Race Mode:</strong> Challenge your friends in multiplayer mode with 2, 3, or 4 players on the same keyboard.</p>
+            <!-- 益智游戏区域 -->
+            <section id="puzzle" class="game-section">
+                <div class="section-header">
+                    <h2>益智游戏</h2>
+                </div>
+                <div class="game-cards">
+                    <!-- 益智游戏卡片通过JavaScript动态加载 -->
+                </div>
             </section>
+
+            <!-- 体育游戏区域 -->
+            <section id="sports" class="game-section">
+                <div class="section-header">
+                    <h2>体育游戏</h2>
+                </div>
+                <div class="game-cards">
+                    <!-- 体育游戏卡片通过JavaScript动态加载 -->
+                </div>
+            </section>
+
+            <!-- 策略游戏区域 -->
+            <section id="strategy" class="game-section">
+                <div class="section-header">
+                    <h2>策略游戏</h2>
+                </div>
+                <div class="game-cards">
+                    <!-- 策略游戏卡片通过JavaScript动态加载 -->
+                </div>
+            </section>
+
+            <!-- 游戏播放区域 -->
+            <section id="game-player" class="game-player" style="display: none;">
+                <div class="player-header">
+                    <h2 id="current-game-title">游戏标题</h2>
+                    <button class="close-btn" onclick="closeGamePlayer()">×</button>
+                </div>
+                <div class="game-container">
+                    <!-- 游戏将在这里加载 -->
+                </div>
+                <div id="game-details" class="game-details">
+                    <button class="game-details-toggle" onclick="toggleGameDetails()">显示详情 ▲</button>
+                    <div id="game-details-content">
+                        <!-- 游戏详情内容 -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- 返回消息 -->
+            <div id="return-message" style="display:none" class="game-return-message">
+                <p>游戏已在新窗口打开。您可以随时关闭游戏窗口，返回本站继续浏览。</p>
+                <button onclick="document.getElementById('return-message').style.display='none'">我知道了</button>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 多彩游戏世界. 所有游戏版权归原作者所有。</p>
         </div>
-    </main>
+    </footer>
 
     <script>
-        function switchGame(gameId) {
-            // Hide all games and info
-            document.querySelectorAll('.game-container').forEach(el => {
-                el.classList.remove('active');
-            });
-            document.querySelectorAll('.game-info').forEach(el => {
-                el.classList.remove('active');
-            });
-            document.querySelectorAll('.game-nav-btn').forEach(el => {
-                el.classList.remove('active');
-            });
+        // 游戏数据
+        const games = {
+            featured: [],
+            action: [],
+            puzzle: [],
+            sports: [],
+            strategy: []
+        };
+
+        // 精选游戏
+        const featuredGames = [];
+
+        // Famobi游戏链接映射
+        const famobiGameLinks = {
+            "slope": {
+                id: "slope",
+                title: "Slope",
+                url: "https://play.famobi.com/slope",
+                category: "action",
+                thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/SlopeTeaser.jpg",
+                description: "一款高速3D球体滚动游戏，考验你的反应能力和技巧。",
+                features: ["无尽模式", "高速挑战", "简单操作", "越玩越难"],
+                howToPlay: "使用箭头键或AD键控制球体左右移动，避开障碍物，尽可能走得更远。",
+                tags: ["3D", "技巧", "速度"],
+                rating: 4.5
+            },
+            "rise-up": {
+                id: "rise-up",
+                title: "Rise Up",
+                url: "https://play.famobi.com/rise-up",
+                category: "action",
+                thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/RiseUpTeaser.jpg",
+                description: "保护你的气球上升，用盾牌抵挡所有障碍物。",
+                features: ["简单的控制", "具有挑战性的关卡", "独特的游戏机制"],
+                howToPlay: "用鼠标或触摸控制盾牌，保护气球免受尖锐物体的伤害。",
+                tags: ["技巧", "休闲", "反应"],
+                rating: 4.6
+            },
+
+            "2048": {
+                id: "2048",
+                title: "2048",
+                url: "https://play.famobi.com/2048",
+                category: "puzzle",
+                thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/2048Teaser.jpg",
+                description: "经典数字合并游戏，将相同的数字合并成更大的数字，目标是得到2048方块。",
+                features: ["简单规则", "策略思考", "无限挑战"],
+                howToPlay: "使用箭头键移动所有方块，相同数字的方块相撞时会合并成为它们的总和。",
+                tags: ["数字", "策略", "益智"],
+                rating: 4.8
+            },
+            "pipe-puzzle": {
+                id: "pipe-puzzle",
+                title: "管道拼图",
+                url: "https://play.famobi.com/pipe-puzzle",
+                category: "puzzle",
+                thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/PipePuzzleTeaser.jpg",
+                description: "旋转和连接管道，创建一个完整的路径让水流通过。",
+                features: ["多个难度级别", "大脑挑战", "时间限制"],
+                howToPlay: "点击管道旋转它们，创建一条从起点到终点的连接路径。",
+                tags: ["解谜", "逻辑", "管道"],
+                rating: 4.2
+            },
+            "words-of-wonders": {
+                id: "words-of-wonders",
+                title: "奇妙单词",
+                url: "https://play.famobi.com/words-of-wonders",
+                category: "puzzle",
+                thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/WordsOfWondersTeaser.jpg",
+                description: "查找字母组合形成单词，解锁世界奇观。",
+                features: ["大量关卡", "词汇挑战", "世界奇观介绍"],
+                howToPlay: "转动字母轮盘创建单词，填满空格以完成每个阶段。",
+                tags: ["单词", "教育", "拼图"],
+                rating: 4.3
+            },
+
+            "8ball-online": {
+                id: "8ball-online",
+                title: "8球台球在线",
+                url: "https://play.famobi.com/8ball-online",
+                category: "sports",
+                thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/8BallOnlineTeaser.jpg",
+                description: "在线台球游戏，挑战电脑或与朋友对战。",
+                features: ["逼真的物理引擎", "多人模式", "简单控制"],
+                howToPlay: "瞄准并拖动鼠标或触摸屏设置力度和方向，然后释放发射台球。",
+                tags: ["台球", "体育", "技巧"],
+                rating: 4.4
+            },
+            "tap-tap-dunk": {
+                id: "tap-tap-dunk",
+                title: "点击灌篮",
+                url: "https://play.famobi.com/tap-tap-dunk",
+                category: "sports",
+                thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/TapTapDunkTeaser.jpg",
+                description: "快速点击屏幕让球进入篮筐，体验紧张刺激的篮球灌篮游戏。",
+                features: ["简单控制", "多种挑战", "不同球场"],
+                howToPlay: "点击屏幕左右两侧控制球的方向，力求精准投篮。",
+                tags: ["篮球", "技巧", "反应"],
+                rating: 4.3
+            },
+
+            "candy-bubble": {
+                id: "candy-bubble",
+                title: "糖果泡泡",
+                url: "https://play.famobi.com/candy-bubble",
+                category: "strategy",
+                thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/CandyBubbleTeaser.jpg",
+                description: "匹配相同颜色的糖果泡泡，创造连锁反应。",
+                features: ["大量关卡", "多种特殊糖果", "时间挑战"],
+                howToPlay: "瞄准并发射泡泡，连接三个或以上相同颜色的泡泡让它们消失。",
+                tags: ["匹配", "泡泡", "糖果"],
+                rating: 4.1
+            },
+            "tower-smash": {
+                id: "tower-smash",
+                title: "塔楼粉碎",
+                url: "https://play.famobi.com/tower-smash",
+                category: "strategy",
+                thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/TowerSmashTeaser.jpg",
+                description: "精确控制摧毁塔楼的每一层，获得高分。",
+                features: ["物理引擎", "策略思考", "升级系统"],
+                howToPlay: "点击屏幕发射球体，瞄准塔楼的弱点以最有效地摧毁它。",
+                tags: ["物理", "摧毁", "精准"],
+                rating: 4.0
+            },
+            "tower-crash-3d": {
+                id: "tower-crash-3d",
+                title: "Tower Crash 3D",
+                url: "https://play.famobi.com/tower-crash-3d",
+                category: "puzzle",
+                thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/TowerCrash3dTeaser.jpg",
+                description: "在这款精彩的3D物理游戏中尽可能多地摧毁塔楼。",
+                features: ["3D物理效果", "多样化的关卡", "策略性玩法"],
+            },
+            "gold-mine": {
+                id: "gold-mine",
+                title: "Gold Mine",
+                url: "https://play.famobi.com/gold-mine",
+                category: "puzzle",
+                thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/GoldMineTeaser.jpg",
+                description: "在这款经典的挖矿游戏中收集黄金和宝石。",
+                features: ["策略性玩法", "多种道具", "逐渐增加的难度"],
+            },
+            "bubble-woods": {
+                id: "bubble-woods",
+                title: "Bubble Woods",
+                url: "https://play.famobi.com/bubble-woods",
+                category: "puzzle",
+                thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/BubbleWoodsTeaser.jpg",
+                description: "在这款泡泡射击游戏中，帮助小狐狸拯救他的森林朋友们。",
+                features: ["可爱的角色", "多种关卡", "有趣的泡泡射击玩法"],
+            },
+        };
+
+        // 初始化游戏数据
+        function initializeGames() {
+            // 将游戏分类到各个类别
+            for (const gameId in famobiGameLinks) {
+                const game = famobiGameLinks[gameId];
+                if (game && game.category) {
+                    games[game.category].push(game);
+                    
+                    // 添加一些游戏到精选区
+                    if (game.rating >= 4.3 || Math.random() > 0.7) {
+                        featuredGames.push(game);
+                    }
+                }
+            }
             
-            // Show selected game and info
-            document.getElementById(gameId).classList.add('active');
-            document.getElementById(gameId + '-info').classList.add('active');
-            
-            // Update active button
-            const index = gameId.replace('game', '');
-            document.querySelectorAll('.game-nav-btn')[index-1].classList.add('active');
+            // 确保精选游戏不为空
+            if (featuredGames.length < 6) {
+                for (const category in games) {
+                    for (const game of games[category]) {
+                        if (!featuredGames.includes(game)) {
+                            featuredGames.push(game);
+                            if (featuredGames.length >= 6) break;
+                        }
+                    }
+                    if (featuredGames.length >= 6) break;
+                }
+            }
         }
+
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始化游戏数据
+            initializeGames();
+            
+            // 加载所有分类的游戏
+            loadCategoryGames('featured', featuredGames);
+            loadCategoryGames('action', games.action);
+            loadCategoryGames('puzzle', games.puzzle);
+            loadCategoryGames('sports', games.sports);
+            loadCategoryGames('strategy', games.strategy);
+            
+            // 添加分类切换事件监听
+            setupCategoryNavigation();
+        });
+
+        // 设置分类导航
+        function setupCategoryNavigation() {
+            const categoryLinks = document.querySelectorAll('.category-link');
+            
+            categoryLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    
+                    // 移除所有active类
+                    categoryLinks.forEach(el => el.classList.remove('active'));
+                    document.querySelectorAll('.game-section').forEach(el => el.classList.remove('active'));
+                    
+                    // 添加active类到当前元素
+                    this.classList.add('active');
+                    
+                    // 显示对应的游戏区域
+                    const category = this.getAttribute('data-category');
+                    document.getElementById(category).classList.add('active');
+                });
+            });
+        }
+
+        // 修改游戏加载函数，使用智能缩略图URL检测
+        function loadCategoryGames(categoryId, games) {
+            const gamesList = document.querySelector(`#${categoryId} .game-cards`);
+            if (!gamesList) return;
+            
+            // 清空现有内容
+            gamesList.innerHTML = '';
+            
+            // 如果没有传入游戏列表，使用该分类的所有游戏
+            if (!games) {
+                games = Object.values(famobiGameLinks).filter(game => 
+                    game.categories && game.categories.includes(categoryId));
+            }
+            
+            // 创建游戏卡片
+            games.forEach(game => {
+                // 构建预览图URL
+                let thumbnailUrl = '';
+                
+                // 如果游戏对象中已有缩略图URL，则直接使用它
+                if (game.thumbnail) {
+                    thumbnailUrl = game.thumbnail;
+                } else {
+                    // 从URL中提取游戏ID
+                    const gameId = game.url.split('/').pop();
+                    
+                    // 转换为CamelCase格式
+                    const formattedGameId = gameId.split('-')
+                        .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+                        .join('');
+                        
+                    // 使用带Teaser后缀的URL，因为这似乎是最常见的格式
+                    thumbnailUrl = `https://img.cdn.famobi.com/portal/html5games/images/tmp/${formattedGameId}Teaser.jpg`;
+                }
+                
+                // 创建游戏卡片HTML，使用智能图片加载
+                const gameCard = document.createElement('div');
+                gameCard.className = 'game-card';
+                gameCard.innerHTML = `
+                    <div class="game-thumbnail">
+                        <img 
+                            src="${thumbnailUrl}" 
+                            alt="${game.title}" 
+                            onerror="this.handleImageError(this, '${game.id}')"
+                        >
+                        <div class="play-overlay">
+                            <span class="play-btn"><i class="fas fa-play-circle"></i></span>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">${game.title}</h3>
+                        <p class="game-desc">${game.shortDescription || (game.description && game.description.length > 60 ? game.description.substring(0, 60) + '...' : game.description || '')}</p>
+                        <button class="play-game-btn" onclick="launchGame('${game.id}')">开始游戏</button>
+                    </div>
+                `;
+                
+                // 添加点击事件
+                gameCard.addEventListener('click', (e) => {
+                    if (!e.target.closest('.play-game-btn')) {
+                        launchGame(game.id);
+                    }
+                });
+                
+                // 添加到游戏列表
+                gamesList.appendChild(gameCard);
+            });
+            
+            // 添加图片加载错误处理函数
+            HTMLImageElement.prototype.handleImageError = function(imgElement, gameId) {
+                const currentSrc = imgElement.src;
+                console.log(`图片加载失败: ${currentSrc}`);
+                
+                // 尝试不同的URL格式
+                if (currentSrc.includes('Teaser.jpg')) {
+                    // 尝试不带Teaser的URL
+                    const newSrc = currentSrc.replace('Teaser.jpg', '.jpg');
+                    console.log(`尝试不带Teaser的URL: ${newSrc}`);
+                    imgElement.src = newSrc;
+                } else if (currentSrc.includes('.jpg') && !currentSrc.includes('Teaser')) {
+                    // 如果不带Teaser的URL也失败，尝试全小写的版本
+                    const gameIdLower = gameId.toLowerCase();
+                    const formattedGameId = gameIdLower.split('-')
+                        .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+                        .join('');
+                    const newSrc = `https://img.cdn.famobi.com/portal/html5games/images/tmp/${formattedGameId}.jpg`;
+                    console.log(`尝试小写ID的URL: ${newSrc}`);
+                    imgElement.src = newSrc;
+                } else {
+                    // 所有尝试都失败，使用默认占位图
+                    imgElement.src = 'images/game-placeholder.jpg';
+                }
+                
+                // 防止无限循环
+                imgElement.onerror = function() {
+                    this.onerror = null;
+                    this.src = 'images/game-placeholder.jpg';
+                };
+            };
+        }
+
+        // 启动游戏
+        function launchGame(gameId) {
+            const game = famobiGameLinks[gameId];
+            if (!game) {
+                console.error('未找到游戏:', gameId);
+                return;
+            }
+            
+            console.log('启动游戏:', game.title, game.url);
+            
+            // 获取游戏播放区域
+            const gamePlayer = document.getElementById('game-player');
+            gamePlayer.style.display = 'flex';
+            
+            // 设置游戏标题
+            document.getElementById('current-game-title').textContent = game.title;
+            
+            // 获取游戏容器
+            const gameContainer = document.querySelector('.game-container');
+            
+            // 处理Famobi游戏URL，使用wrapper格式
+            let gameUrl = game.url;
+            if (gameUrl.includes('famobi.com')) {
+                // 从原始URL中提取游戏ID
+                let gameIdentifier = gameUrl.split('/').pop();
+                
+                // 创建wrapper URL格式
+                gameUrl = `https://play.famobi.com/wrapper/${gameIdentifier}/A-WORLDOFGAMING`;
+                console.log("使用wrapper格式URL:", gameUrl);
+            }
+            
+            // 创建游戏框架
+            gameContainer.innerHTML = `
+                <div class="clean-game-container">
+                    <iframe 
+                        src="${gameUrl}" 
+                        class="game-frame" 
+                        allowfullscreen="true"
+                        allow="fullscreen; autoplay; clipboard-write"
+                        frameborder="0"
+                        id="game-iframe"
+                    </iframe>
+                    <div class="game-tip">
+                        <p>游戏加载中，稍等片刻...</p>
+                    </div>
+                </div>
+            `;
+            
+            // 获取iframe元素
+            const iframe = document.getElementById('game-iframe');
+            
+            // 添加iframe加载完成事件处理
+            iframe.onload = function() {
+                try {
+                    // 尝试防止iframe内容跳转
+                    if (iframe.contentWindow) {
+                        // 监听iframe内部的点击事件
+                        iframe.contentWindow.addEventListener('beforeunload', function(e) {
+                            // 阻止跳出iframe
+                            e.preventDefault();
+                            e.returnValue = '';
+                            return '确定要离开游戏吗？';
+                        });
+                    }
+                } catch(e) {
+                    console.log('无法访问iframe内容:', e);
+                }
+            };
+            
+            // 填充游戏详情
+            const featuresHtml = game.features ? game.features.map(feature => `<li>${feature}</li>`).join('') : '';
+            document.getElementById('game-details-content').innerHTML = `
+                <div class="game-details-section">
+                    <h3>游戏介绍</h3>
+                    <p>${game.description}</p>
+                </div>
+                <div class="game-details-section">
+                    <h3>游戏特点</h3>
+                    <ul>${featuresHtml}</ul>
+                </div>
+                <div class="game-details-section">
+                    <h3>如何游玩</h3>
+                    <p>${game.howToPlay || '点击或触摸屏幕与游戏互动。'}</p>
+                </div>
+            `;
+            
+            // 初始状态为展开详情
+            document.getElementById('game-details').classList.remove('collapsed');
+            document.querySelector('.game-details-toggle').textContent = '隐藏详情 ▼';
+            
+            // 添加游戏提示自动隐藏
+            setTimeout(() => {
+                const gameTip = document.querySelector('.game-tip');
+                if (gameTip) {
+                    gameTip.style.opacity = '0';
+                    setTimeout(() => {
+                        gameTip.style.display = 'none';
+                    }, 500);
+                }
+            }, 5000);
+            
+            // 防止页面跳转
+            window.addEventListener('beforeunload', preventUnload);
+        }
+
+        // 添加一个函数来移除页面跳转监听
+        function preventUnload(e) {
+            if (document.getElementById('game-player').style.display === 'flex') {
+                e.preventDefault();
+                e.returnValue = '游戏正在进行中，确定要离开吗？';
+                return '游戏正在进行中，确定要离开吗？';
+            }
+        }
+
+        // 修改关闭游戏函数，移除页面跳转监听
+        function closeGame() {
+            const gamePlayer = document.getElementById('game-player');
+            gamePlayer.style.display = 'none';
+            
+            // 清空游戏容器，避免游戏继续在后台运行
+            document.querySelector('.game-container').innerHTML = '';
+            
+            // 移除页面跳转监听
+            window.removeEventListener('beforeunload', preventUnload);
+        }
+
+        // 切换游戏详情的展开/折叠状态
+        function toggleGameDetails() {
+            const gameDetails = document.getElementById('game-details');
+            const toggleBtn = document.querySelector('.game-details-toggle');
+            
+            if (gameDetails.classList.contains('collapsed')) {
+                gameDetails.classList.remove('collapsed');
+                toggleBtn.textContent = '隐藏详情 ▼';
+            } else {
+                gameDetails.classList.add('collapsed');
+                toggleBtn.textContent = '显示详情 ▲';
+            }
+        }
+
+        // 搜索游戏
+        function searchGames() {
+            const searchInput = document.getElementById('search-input');
+            const searchTerm = searchInput.value.trim().toLowerCase();
+            
+            if (!searchTerm) {
+                alert('请输入搜索内容');
+                return;
+            }
+            
+            // 切换到精选游戏区域
+            document.querySelectorAll('.category-link').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.game-section').forEach(el => el.classList.remove('active'));
+            
+            document.querySelector('.category-link[data-category="featured"]').classList.add('active');
+            document.getElementById('featured').classList.add('active');
+            
+            // 获取搜索结果
+            const searchResults = [];
+            for (const gameId in famobiGameLinks) {
+                const game = famobiGameLinks[gameId];
+                if (game.title.toLowerCase().includes(searchTerm) || 
+                    game.description.toLowerCase().includes(searchTerm) || 
+                    (game.tags && game.tags.some(tag => tag.toLowerCase().includes(searchTerm)))) {
+                    searchResults.push(game);
+                }
+            }
+            
+            // 更新标题
+            document.querySelector('#featured .section-header h2').textContent = 
+                `搜索结果: ${searchTerm} (${searchResults.length}个游戏)`;
+            
+            // 加载搜索结果
+            loadCategoryGames('featured', searchResults);
+        }
+
+        // 从famobiGameLinks对象中删除三个游戏
+        function removeGamesFromList() {
+            // 删除点球大战，1v1-lol，塔防这三个游戏
+            delete famobiGameLinks["penalty-kicks"];
+            delete famobiGameLinks["1v1-lol"];
+            delete famobiGameLinks["tower-defense"];
+            
+            console.log("已删除指定的三个游戏");
+            
+            // 重新加载所有分类的游戏列表
+            loadAllCategories();
+        }
+
+        // 在页面加载完成后调用
+        document.addEventListener('DOMContentLoaded', function() {
+            // 调用删除函数
+            removeGamesFromList();
+        });
     </script>
 </body>
 </html> 
