@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>多彩游戏世界 - 免费HTML5游戏平台</title>
-    <meta name="description" content="享受免费在线HTML5游戏，包括动作游戏、益智游戏、体育游戏等多种类型，无需下载即可玩。">
-    <meta name="keywords" content="免费游戏, 在线游戏, HTML5游戏, 动作游戏, 益智游戏, 体育游戏">
+    <title>Colorful Game World - Free HTML5 Game Platform</title>
+    <meta name="description" content="Enjoy free online HTML5 games including action games, puzzle games, sports games and more. Play instantly with no download required.">
+    <meta name="keywords" content="free games, online games, HTML5 games, action games, puzzle games, sports games, free online games">
     <style>
         /* 重置样式 */
         * {
@@ -698,17 +698,63 @@
         .game-preview-info::-webkit-scrollbar-thumb:hover {
             background: rgba(0, 255, 255, 0.5);
         }
+        
+        /* 添加游戏评分星星样式 */
+        .game-rating {
+            display: flex;
+            align-items: center;
+            margin: 8px 0 15px;
+            color: #ffffff;
+        }
+        
+        .rating-stars {
+            color: #FFD700; /* 金色星星 */
+            font-size: 1.3rem;
+            letter-spacing: 3px;
+            margin-right: 10px;
+        }
+        
+        .rating-score {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+        /* 游戏卡片评分样式 */
+        .card-rating {
+            display: flex;
+            align-items: center;
+            margin: 5px 0 8px;
+        }
+        
+        .card-stars {
+            color: #FFD700; /* 金色星星 */
+            font-size: 1rem;
+            letter-spacing: 2px;
+            margin-right: 8px;
+        }
+        
+        .card-score {
+            background: rgba(0, 0, 0, 0.1);
+            color: #333;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
             <div class="logo">
-                <h1>多彩游戏世界</h1>
+                <h1>Colorful Game World</h1>
             </div>
             <div class="search-box">
-                <input type="text" placeholder="搜索游戏...">
-                <button type="submit">搜索</button>
+                <input type="text" placeholder="Search for games...">
+                <button>Search</button>
             </div>
         </div>
     </header>
@@ -717,25 +763,25 @@
         <!-- 左侧导航栏 -->
         <aside class="sidebar">
             <nav class="side-nav">
-                <h3>游戏分类</h3>
+                <h3>Categories</h3>
                 <ul>
-                    <li><a href="#" class="category-link active" data-category="featured">精选游戏</a></li>
-                    <li><a href="#" class="category-link" data-category="action">动作游戏</a></li>
-                    <li><a href="#" class="category-link" data-category="puzzle">益智游戏</a></li>
-                    <li><a href="#" class="category-link" data-category="sports">体育游戏</a></li>
-                    <li><a href="#" class="category-link" data-category="strategy">策略游戏</a></li>
+                    <li><a href="#" class="category-link active" data-category="featured">Featured Games</a></li>
+                    <li><a href="#" class="category-link" data-category="action">Action Games</a></li>
+                    <li><a href="#" class="category-link" data-category="puzzle">Puzzle Games</a></li>
+                    <li><a href="#" class="category-link" data-category="sports">Sports Games</a></li>
+                    <li><a href="#" class="category-link" data-category="strategy">Strategy Games</a></li>
                 </ul>
                 
-                <h3>热门标签</h3>
+                <h3>Popular Tags</h3>
                 <div class="tag-cloud">
-                    <a href="#" class="tag">射击</a>
-                    <a href="#" class="tag">益智</a>
-                    <a href="#" class="tag">多人</a>
-                    <a href="#" class="tag">街机</a>
-                    <a href="#" class="tag">体育</a>
-                    <a href="#" class="tag">物理</a>
-                    <a href="#" class="tag">休闲</a>
-                    <a href="#" class="tag">冒险</a>
+                    <a href="#" class="tag">Arcade</a>
+                    <a href="#" class="tag">Racing</a>
+                    <a href="#" class="tag">Puzzle</a>
+                    <a href="#" class="tag">Skill</a>
+                    <a href="#" class="tag">Multiplayer</a>
+                    <a href="#" class="tag">Adventure</a>
+                    <a href="#" class="tag">Strategy</a>
+                    <a href="#" class="tag">Physics</a>
                 </div>
             </nav>
         </aside>
@@ -745,7 +791,7 @@
             <!-- 精选游戏区域 -->
             <section id="featured" class="game-section active">
                 <div class="section-header">
-                    <h2>精选游戏</h2>
+                    <h2>Featured Games</h2>
                 </div>
                 <div class="game-cards">
                     <!-- 游戏卡片通过JavaScript动态加载 -->
@@ -755,7 +801,7 @@
             <!-- 动作游戏区域 -->
             <section id="action" class="game-section">
                 <div class="section-header">
-                    <h2>动作游戏</h2>
+                    <h2>Action Games</h2>
                 </div>
                 <div class="game-cards">
                     <!-- 动作游戏卡片通过JavaScript动态加载 -->
@@ -765,7 +811,7 @@
             <!-- 益智游戏区域 -->
             <section id="puzzle" class="game-section">
                 <div class="section-header">
-                    <h2>益智游戏</h2>
+                    <h2>Puzzle Games</h2>
                 </div>
                 <div class="game-cards">
                     <!-- 益智游戏卡片通过JavaScript动态加载 -->
@@ -775,7 +821,7 @@
             <!-- 体育游戏区域 -->
             <section id="sports" class="game-section">
                 <div class="section-header">
-                    <h2>体育游戏</h2>
+                    <h2>Sports Games</h2>
                 </div>
                 <div class="game-cards">
                     <!-- 体育游戏卡片通过JavaScript动态加载 -->
@@ -785,7 +831,7 @@
             <!-- 策略游戏区域 -->
             <section id="strategy" class="game-section">
                 <div class="section-header">
-                    <h2>策略游戏</h2>
+                    <h2>Strategy Games</h2>
                 </div>
                 <div class="game-cards">
                     <!-- 策略游戏卡片通过JavaScript动态加载 -->
@@ -795,14 +841,14 @@
             <!-- 游戏播放区域 -->
             <section id="game-player" class="game-player" style="display: none;">
                 <div class="player-header">
-                    <h2 id="current-game-title">游戏标题</h2>
+                    <h2 id="current-game-title">Game Title</h2>
                     <button class="close-game-btn">&times;</button>
                 </div>
                 <div class="game-container">
                     <!-- 游戏将在这里加载 -->
                 </div>
-                <div id="game-details" class="game-details">
-                    <button class="game-details-toggle" onclick="toggleGameDetails()">显示详情 ▲</button>
+                <div id="game-details" class="game-details collapsed">
+                    <button class="game-details-toggle" onclick="toggleGameDetails()">Show Details ▲</button>
                     <div id="game-details-content">
                         <!-- 游戏详情内容 -->
                     </div>
@@ -811,20 +857,20 @@
 
             <!-- 返回消息 -->
             <div id="return-message" style="display:none" class="game-return-message">
-                <p>游戏已在新窗口打开。您可以随时关闭游戏窗口，返回本站继续浏览。</p>
-                <button onclick="document.getElementById('return-message').style.display='none'">我知道了</button>
+                <p>Game has opened in a new window. You can close the game window at any time to return to this site and continue browsing.</p>
+                <button onclick="document.getElementById('return-message').style.display='none'">I understand</button>
             </div>
         </main>
     </div>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 多彩游戏世界. 所有游戏版权归原作者所有。</p>
+            <p>&copy; 2023 Colorful Game World. All games are free to play online. No download required.</p>
         </div>
     </footer>
 
     <script>
-        // 游戏数据
+        // 游戏数据结构
         const games = {
             featured: [],
             action: [],
@@ -833,10 +879,10 @@
             strategy: []
         };
 
-        // 精选游戏
+        // 精选游戏数组
         const featuredGames = [];
 
-        // Famobi游戏链接映射
+        // Famobi游戏链接映射 - 所有游戏数据
         const famobiGameLinks = {
             "slope": {
                 id: "slope",
@@ -844,10 +890,10 @@
                 url: "https://play.famobi.com/slope",
                 category: "action",
                 thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/SlopeTeaser.jpg",
-                description: "一款高速3D球体滚动游戏，考验你的反应能力和技巧。",
-                features: ["无尽模式", "高速挑战", "简单操作", "越玩越难"],
-                howToPlay: "使用箭头键或AD键控制球体左右移动，避开障碍物，尽可能走得更远。",
-                tags: ["3D", "技巧", "速度"],
+                description: "A high-speed 3D ball rolling game that tests your reaction skills. Free to play online with no download required.",
+                features: ["Endless Mode", "High Speed Challenge", "Simple Controls", "Increasing Difficulty"],
+                howToPlay: "Use arrow keys or AD to control the ball left and right. Avoid obstacles and go as far as you can.",
+                tags: ["3D", "Skill", "Speed"],
                 rating: 4.5
             },
             "rise-up": {
@@ -856,97 +902,94 @@
                 url: "https://play.famobi.com/rise-up",
                 category: "action",
                 thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/RiseUpTeaser.jpg",
-                description: "保护你的气球上升，用盾牌抵挡所有障碍物。",
-                features: ["简单的控制", "具有挑战性的关卡", "独特的游戏机制"],
-                howToPlay: "用鼠标或触摸控制盾牌，保护气球免受尖锐物体的伤害。",
-                tags: ["技巧", "休闲", "反应"],
+                description: "Protect your balloon as it rises by using a shield to block all obstacles. Play this free online game instantly without downloading.",
+                features: ["Simple Controls", "Challenging Levels", "Unique Gameplay Mechanics"],
+                howToPlay: "Use mouse or touch to control the shield and protect the balloon from sharp objects.",
+                tags: ["Skill", "Casual", "Reaction"],
                 rating: 4.6
             },
-
             "2048": {
                 id: "2048",
                 title: "2048",
                 url: "https://play.famobi.com/2048",
                 category: "puzzle",
                 thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/2048Teaser.jpg",
-                description: "经典数字合并游戏，将相同的数字合并成更大的数字，目标是得到2048方块。",
-                features: ["简单规则", "策略思考", "无限挑战"],
-                howToPlay: "使用箭头键移动所有方块，相同数字的方块相撞时会合并成为它们的总和。",
-                tags: ["数字", "策略", "益智"],
+                description: "Classic number merging game where you combine matching numbers to create larger ones. Aim to get the 2048 tile in this free online puzzle.",
+                features: ["Simple Rules", "Strategic Thinking", "Endless Challenge"],
+                howToPlay: "Use arrow keys to move all tiles. When two tiles with the same number touch, they merge into their sum.",
+                tags: ["Numbers", "Strategy", "Brain"],
                 rating: 4.8
             },
             "pipe-puzzle": {
                 id: "pipe-puzzle",
-                title: "管道拼图",
+                title: "Pipe Puzzle",
                 url: "https://play.famobi.com/pipe-puzzle",
                 category: "puzzle",
                 thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/PipePuzzleTeaser.jpg",
-                description: "旋转和连接管道，创建一个完整的路径让水流通过。",
-                features: ["多个难度级别", "大脑挑战", "时间限制"],
-                howToPlay: "点击管道旋转它们，创建一条从起点到终点的连接路径。",
-                tags: ["解谜", "逻辑", "管道"],
+                description: "Rotate and connect pipes to create a complete path for water to flow through. A free online puzzle game with no download needed.",
+                features: ["Multiple Difficulty Levels", "Brain Challenge", "Time Limits"],
+                howToPlay: "Click on pipes to rotate them and create a connecting path from start to finish.",
+                tags: ["Puzzle", "Logic", "Pipes"],
                 rating: 4.2
             },
             "words-of-wonders": {
                 id: "words-of-wonders",
-                title: "奇妙单词",
+                title: "Words of Wonders",
                 url: "https://play.famobi.com/words-of-wonders",
                 category: "puzzle",
                 thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/WordsOfWondersTeaser.jpg",
-                description: "查找字母组合形成单词，解锁世界奇观。",
-                features: ["大量关卡", "词汇挑战", "世界奇观介绍"],
-                howToPlay: "转动字母轮盘创建单词，填满空格以完成每个阶段。",
-                tags: ["单词", "教育", "拼图"],
+                description: "Find letter combinations to form words and unlock world wonders. Free to play online with no registration needed.",
+                features: ["Numerous Levels", "Vocabulary Challenge", "World Wonders Introduction"],
+                howToPlay: "Rotate the letter wheel to create words and fill in the blanks to complete each stage.",
+                tags: ["Words", "Educational", "Puzzle"],
                 rating: 4.3
             },
-
             "8ball-online": {
                 id: "8ball-online",
-                title: "8球台球在线",
+                title: "8 Ball Online",
                 url: "https://play.famobi.com/8ball-online",
                 category: "sports",
                 thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/8BallOnlineTeaser.jpg",
-                description: "在线台球游戏，挑战电脑或与朋友对战。",
-                features: ["逼真的物理引擎", "多人模式", "简单控制"],
-                howToPlay: "瞄准并拖动鼠标或触摸屏设置力度和方向，然后释放发射台球。",
-                tags: ["台球", "体育", "技巧"],
+                description: "Online pool game where you can challenge the computer or play against friends. Free to play online with no download required.",
+                features: ["Realistic physics engine", "Multiplayer mode", "Simple controls"],
+                howToPlay: "Aim and drag the mouse or touch screen to set the power and direction, then release the cue ball.",
+                tags: ["Pool", "Sports", "Skill"],
                 rating: 4.4
             },
             "tap-tap-dunk": {
                 id: "tap-tap-dunk",
-                title: "点击灌篮",
+                title: "Tap Tap Dunk",
                 url: "https://play.famobi.com/tap-tap-dunk",
                 category: "sports",
                 thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/TapTapDunkTeaser.jpg",
-                description: "快速点击屏幕让球进入篮筐，体验紧张刺激的篮球灌篮游戏。",
-                features: ["简单控制", "多种挑战", "不同球场"],
-                howToPlay: "点击屏幕左右两侧控制球的方向，力求精准投篮。",
-                tags: ["篮球", "技巧", "反应"],
+                description: "Quickly tap the screen to let the ball enter the basket and experience an exciting basketball dunk game. Free to play online with no download required.",
+                features: ["Simple controls", "Various challenges", "Different courts"],
+                howToPlay: "Tap the screen on the left or right side to control the ball direction and aim for a precise shot.",
+                tags: ["Basketball", "Skill", "Reaction"],
                 rating: 4.3
             },
-
             "candy-bubble": {
                 id: "candy-bubble",
-                title: "糖果泡泡",
+                title: "Candy Bubble",
                 url: "https://play.famobi.com/candy-bubble",
                 category: "strategy",
                 thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/CandyBubbleTeaser.jpg",
-                description: "匹配相同颜色的糖果泡泡，创造连锁反应。",
-                features: ["大量关卡", "多种特殊糖果", "时间挑战"],
-                howToPlay: "瞄准并发射泡泡，连接三个或以上相同颜色的泡泡让它们消失。",
-                tags: ["匹配", "泡泡", "糖果"],
+                description: "Match up candies of the same color to create a chain reaction. Free to play online with no download required.",
+                features: ["Numerous levels", "Various special candies", "Time challenge"],
+                howToPlay: "Aim and shoot bubbles to connect three or more candies of the same color to make them disappear.",
+                tags: ["Matching", "Bubbles", "Candies"],
                 rating: 4.1
             },
             "tower-smash": {
                 id: "tower-smash",
-                title: "塔楼粉碎",
+                title: "Tower Smash",
                 url: "https://play.famobi.com/tower-smash",
                 category: "strategy",
                 thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/TowerSmashTeaser.jpg",
-                description: "精确控制摧毁塔楼的每一层，获得高分。",
-                features: ["物理引擎", "策略思考", "升级系统"],
-                howToPlay: "点击屏幕发射球体，瞄准塔楼的弱点以最有效地摧毁它。",
-                tags: ["物理", "摧毁", "精准"],
+                description: "Accurately control the destruction of each floor of the tower to get high scores. Free to play online with no download required.",
+                features: ["Physics engine", "Strategic thinking", "Upgrade system"],
+                howToPlay: "Click the screen to launch the ball and aim at the tower's weak point to destroy it most effectively.",
+                tags: ["Physics", "Destruction", "Accurate"],
                 rating: 4.0
             },
             "tower-crash-3d": {
@@ -955,8 +998,8 @@
                 url: "https://play.famobi.com/tower-crash-3d",
                 category: "puzzle",
                 thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/TowerCrash3dTeaser.jpg",
-                description: "在这款精彩的3D物理游戏中尽可能多地摧毁塔楼。",
-                features: ["3D物理效果", "多样化的关卡", "策略性玩法"],
+                description: "In this exciting 3D physics game, destroy as many towers as possible in various levels and gameplay styles.",
+                features: ["3D physics effect", "Various levels", "Strategic gameplay"]
             },
             "gold-mine": {
                 id: "gold-mine",
@@ -964,8 +1007,11 @@
                 url: "https://play.famobi.com/gold-mine",
                 category: "puzzle",
                 thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/GoldMineTeaser.jpg",
-                description: "在这款经典的挖矿游戏中收集黄金和宝石。",
-                features: ["策略性玩法", "多种道具", "逐渐增加的难度"],
+                description: "Collect gold and gems in this classic mining game. Free to play online with no download required.",
+                features: ["Strategic gameplay", "Various items", "Increasing difficulty"],
+                howToPlay: "Collect gold and gems in this classic mining game. Free to play online with no download required.",
+                tags: ["Strategic gameplay", "Various items", "Increasing difficulty"],
+                rating: 4.0
             },
             "bubble-woods": {
                 id: "bubble-woods",
@@ -973,87 +1019,241 @@
                 url: "https://play.famobi.com/bubble-woods",
                 category: "puzzle",
                 thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/BubbleWoodsTeaser.jpg",
-                description: "在这款泡泡射击游戏中，帮助小狐狸拯救他的森林朋友们。",
-                features: ["可爱的角色", "多种关卡", "有趣的泡泡射击玩法"],
+                description: "In this bubble shooting game, help the fox rescue his forest friends. Free to play online with no download required.",
+                features: ["Cute characters", "Various levels", "Fun bubble shooting gameplay"],
+                howToPlay: "In this bubble shooting game, help the fox rescue his forest friends. Free to play online with no download required.",
+                tags: ["Cute characters", "Various levels", "Fun bubble shooting gameplay"],
+                rating: 3.8
             },
+            "save-the-princess": {
+                id: "save-the-princess",
+                title: "Save the Princess",
+                url: "https://play.famobi.com/save-the-princess",
+                category: "puzzle",
+                thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/SaveThePrincessTeaser.jpg",
+                description: "In this puzzle game, you need to solve various puzzles to rescue the trapped princess. Free to play online with no download required.",
+                features: ["Various levels", "Puzzle solving", "Beautiful graphics"],
+                howToPlay: "In this puzzle game, you need to solve various puzzles to rescue the trapped princess. Free to play online with no download required.",
+                tags: ["Various levels", "Puzzle solving", "Beautiful graphics"],
+                rating: 4.3
+            },
+            "peet-a-lock": {
+                id: "peet-a-lock",
+                title: "Peet a Lock",
+                url: "https://play.famobi.com/peet-a-lock",
+                category: "puzzle",
+                thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/PeetALockTeaser.jpg",
+                description: "Unlock various locks and test your puzzle solving skills! Free to play online with no download required.",
+                features: ["Numerous levels", "Increasing difficulty", "Puzzle solving challenge"],
+                howToPlay: "Unlock various locks and test your puzzle solving skills! Free to play online with no download required.",
+                tags: ["Numerous levels", "Increasing difficulty", "Puzzle solving challenge"],
+                rating: 4.1
+            },
+            "pengu-slide": {
+                id: "pengu-slide",
+                title: "Pengu Slide",
+                url: "https://play.famobi.com/pengu-slide",
+                category: "arcade",
+                thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/PenguSlideTeaser.jpg",
+                description: "Control the cute penguin sliding on the ice to collect fish and avoid obstacles. Free to play online with no download required.",
+                features: ["Cute character", "Simple controls", "Rich content"],
+                howToPlay: "Control the cute penguin sliding on the ice to collect fish and avoid obstacles. Free to play online with no download required.",
+                tags: ["Cute character", "Simple controls", "Rich content"],
+                rating: 4.5
+            },
+            "peet-around": {
+                id: "peet-around",
+                title: "Peet Around",
+                url: "https://play.famobi.com/peet-around",
+                category: "puzzle",
+                thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/PeetAroundTeaser.jpg",
+                description: "Find your way out in the maze, collect more items, and unlock more levels. Free to play online with no download required.",
+                features: ["Maze exploration", "Rich levels", "Fun game"],
+                howToPlay: "Find your way out in the maze, collect more items, and unlock more levels. Free to play online with no download required.",
+                tags: ["Maze exploration", "Rich levels", "Fun game"],
+                rating: 3.9
+            },
+            "emoji-flow": {
+                id: "emoji-flow",
+                title: "Emoji Flow",
+                url: "https://play.famobi.com/emoji-flow",
+                category: "puzzle",
+                thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/EmojiFlowTeaser.jpg",
+                description: "Connect the same emoji to create a flow and complete various challenges. Free to play online with no download required.",
+                features: ["Matching game", "Emojis", "Rich levels"],
+                howToPlay: "Connect the same emoji to create a flow and complete various challenges. Free to play online with no download required.",
+                tags: ["Matching game", "Emojis", "Rich levels"],
+                rating: 4.4
+            },
+            "neon-swing": {
+                id: "neon-swing",
+                title: "Neon Swing",
+                url: "https://play.famobi.com/neon-swing",
+                category: "arcade",
+                thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/NeonSwingTeaser.jpg",
+                description: "Swing in the neon environment and collect gems while avoiding obstacles. Free to play online with no download required.",
+                features: ["Reaction test", "Neon style", "Simple controls"],
+                howToPlay: "Swing in the neon environment and collect gems while avoiding obstacles. Free to play online with no download required.",
+                tags: ["Reaction test", "Neon style", "Simple controls"],
+                rating: 4.6
+            },
+            "neon-tower": {
+                id: "neon-tower",
+                title: "Neon Tower",
+                url: "https://play.famobi.com/neon-tower",
+                category: "arcade",
+                thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/NeonTowerTeaser.jpg",
+                description: "Climb the neon tower while avoiding obstacles and reach the highest point. Free to play online with no download required.",
+                features: ["Neon art", "Reaction challenge", "High score competition"],
+                howToPlay: "Climb the neon tower while avoiding obstacles and reach the highest point. Free to play online with no download required.",
+                tags: ["Neon art", "Reaction challenge", "High score competition"],
+                rating: 4.7
+            },
+            "drift-dudes": {
+                id: "drift-dudes",
+                title: "Drift Dudes",
+                url: "https://play.famobi.com/drift-dudes",
+                category: "racing",
+                thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/DriftDudesTeaser.jpg",
+                description: "Experience an exciting car drifting game and unlock different vehicles and tracks. Free to play online with no download required.",
+                features: ["Drifting skill", "Various vehicles", "Racing challenge"],
+                howToPlay: "Experience an exciting car drifting game and unlock different vehicles and tracks. Free to play online with no download required.",
+                tags: ["Drifting skill", "Various vehicles", "Racing challenge"],
+                rating: 4.8
+            }
         };
+
+        // 在famobiGameLinks对象中为没有评分的游戏添加评分
+        // 找到以下游戏对象，在每个对象中添加rating属性
+
+        // 找到 "tower-crash-3d" 游戏对象，添加评分
+        famobiGameLinks["tower-crash-3d"].rating = 4.2;
+
+        // 找到 "gold-mine" 游戏对象，添加评分
+        famobiGameLinks["gold-mine"].rating = 4.0;
+
+        // 找到 "bubble-woods" 游戏对象，添加评分
+        famobiGameLinks["bubble-woods"].rating = 3.8;
+
+        // 找到 "save-the-princess" 游戏对象，添加评分
+        famobiGameLinks["save-the-princess"].rating = 4.3;
+
+        // 找到 "peet-a-lock" 游戏对象，添加评分
+        famobiGameLinks["peet-a-lock"].rating = 4.1;
+
+        // 找到 "pengu-slide" 游戏对象，添加评分
+        famobiGameLinks["pengu-slide"].rating = 4.5;
+
+        // 找到 "peet-around" 游戏对象，添加评分
+        famobiGameLinks["peet-around"].rating = 3.9;
+
+        // 找到 "emoji-flow" 游戏对象，添加评分
+        famobiGameLinks["emoji-flow"].rating = 4.4;
+
+        // 找到 "neon-swing" 游戏对象，添加评分
+        famobiGameLinks["neon-swing"].rating = 4.6;
+
+        // 找到 "neon-tower" 游戏对象，添加评分
+        famobiGameLinks["neon-tower"].rating = 4.7;
+
+        // 找到 "drift-dudes" 游戏对象，添加评分
+        famobiGameLinks["drift-dudes"].rating = 4.8;
 
         // 初始化游戏数据
         function initializeGames() {
-            // 将游戏分类到各个类别
+            // 为没有评分的游戏添加评分
+            if (famobiGameLinks["tower-crash-3d"] && !famobiGameLinks["tower-crash-3d"].rating) 
+                famobiGameLinks["tower-crash-3d"].rating = 4.2;
+            
+            if (famobiGameLinks["gold-mine"] && !famobiGameLinks["gold-mine"].rating) 
+                famobiGameLinks["gold-mine"].rating = 4.0;
+            
+            if (famobiGameLinks["bubble-woods"] && !famobiGameLinks["bubble-woods"].rating) 
+                famobiGameLinks["bubble-woods"].rating = 3.8;
+            
+            if (famobiGameLinks["save-the-princess"] && !famobiGameLinks["save-the-princess"].rating) 
+                famobiGameLinks["save-the-princess"].rating = 4.3;
+            
+            if (famobiGameLinks["peet-a-lock"] && !famobiGameLinks["peet-a-lock"].rating) 
+                famobiGameLinks["peet-a-lock"].rating = 4.1;
+            
+            if (famobiGameLinks["pengu-slide"] && !famobiGameLinks["pengu-slide"].rating) 
+                famobiGameLinks["pengu-slide"].rating = 4.5;
+            
+            if (famobiGameLinks["peet-around"] && !famobiGameLinks["peet-around"].rating) 
+                famobiGameLinks["peet-around"].rating = 3.9;
+            
+            if (famobiGameLinks["emoji-flow"] && !famobiGameLinks["emoji-flow"].rating) 
+                famobiGameLinks["emoji-flow"].rating = 4.4;
+            
+            if (famobiGameLinks["neon-swing"] && !famobiGameLinks["neon-swing"].rating) 
+                famobiGameLinks["neon-swing"].rating = 4.6;
+            
+            if (famobiGameLinks["neon-tower"] && !famobiGameLinks["neon-tower"].rating) 
+                famobiGameLinks["neon-tower"].rating = 4.7;
+            
+            if (famobiGameLinks["drift-dudes"] && !famobiGameLinks["drift-dudes"].rating) 
+                famobiGameLinks["drift-dudes"].rating = 4.8;
+
+            // 清空分类
+            games.featured = [];
+            games.action = [];
+            games.puzzle = [];
+            games.sports = [];
+            games.strategy = [];
+            featuredGames.length = 0;
+            
+            // 分类游戏
             for (const gameId in famobiGameLinks) {
                 const game = famobiGameLinks[gameId];
-                if (game && game.category) {
-                    games[game.category].push(game);
-                    
-                    // 添加一些游戏到精选区
-                    if (game.rating >= 4.3 || Math.random() > 0.7) {
-                        featuredGames.push(game);
-                    }
+                
+                // 根据游戏类别添加到相应分类
+                if (game.category === 'action') {
+                    games.action.push(game);
+                } else if (game.category === 'puzzle') {
+                    games.puzzle.push(game);
+                } else if (game.category === 'sports') {
+                    games.sports.push(game);
+                } else if (game.category === 'strategy') {
+                    games.strategy.push(game);
+                } else if (game.category === 'arcade') {
+                    // 将arcade类型的游戏添加到action分类
+                    games.action.push(game);
+                } else if (game.category === 'racing') {
+                    // 将racing类型的游戏添加到sports分类
+                    games.sports.push(game);
+                }
+                
+                // 添加一些游戏到精选区
+                if (game.rating && game.rating >= 4.3 || Math.random() > 0.7) {
+                    featuredGames.push(game);
                 }
             }
             
             // 确保精选游戏不为空
             if (featuredGames.length < 6) {
-                for (const category in games) {
+                // 从各分类中添加游戏
+                const allCategories = ['action', 'puzzle', 'sports', 'strategy'];
+                for (const category of allCategories) {
                     for (const game of games[category]) {
                         if (!featuredGames.includes(game)) {
                             featuredGames.push(game);
-                            if (featuredGames.length >= 6) break;
                         }
+                        if (featuredGames.length >= 6) break;
                     }
                     if (featuredGames.length >= 6) break;
                 }
             }
+            
+            console.log("游戏分类初始化完成");
+            console.log("精选游戏:", featuredGames.length);
+            console.log("动作游戏:", games.action.length);
+            console.log("益智游戏:", games.puzzle.length);
+            console.log("体育游戏:", games.sports.length);
+            console.log("策略游戏:", games.strategy.length);
         }
 
-        // 页面加载完成后执行
-        document.addEventListener('DOMContentLoaded', function() {
-            // 初始化游戏数据
-            initializeGames();
-            
-            // 加载所有分类的游戏
-            loadCategoryGames('featured', featuredGames);
-            loadCategoryGames('action', games.action);
-            loadCategoryGames('puzzle', games.puzzle);
-            loadCategoryGames('sports', games.sports);
-            loadCategoryGames('strategy', games.strategy);
-            
-            // 添加分类切换事件监听
-            setupCategoryNavigation();
-            
-            // 为关闭按钮绑定点击事件
-            const closeButton = document.querySelector('.close-game-btn');
-            if (closeButton) {
-                closeButton.addEventListener('click', function() {
-                    closeGame();
-                });
-            }
-        });
-
-        // 设置分类导航
-        function setupCategoryNavigation() {
-            const categoryLinks = document.querySelectorAll('.category-link');
-            
-            categoryLinks.forEach(link => {
-                link.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    
-                    // 移除所有active类
-                    categoryLinks.forEach(el => el.classList.remove('active'));
-                    document.querySelectorAll('.game-section').forEach(el => el.classList.remove('active'));
-                    
-                    // 添加active类到当前元素
-                    this.classList.add('active');
-                    
-                    // 显示对应的游戏区域
-                    const category = this.getAttribute('data-category');
-                    document.getElementById(category).classList.add('active');
-                });
-            });
-        }
-
-        // 修改游戏加载函数，使用智能缩略图URL检测
+        // 加载分类的游戏
         function loadCategoryGames(categoryId, games) {
             const gamesList = document.querySelector(`#${categoryId} .game-cards`);
             if (!gamesList) return;
@@ -1088,6 +1288,24 @@
                     thumbnailUrl = `https://img.cdn.famobi.com/portal/html5games/images/tmp/${formattedGameId}Teaser.jpg`;
                 }
                 
+                // 创建评分星星HTML
+                let ratingHtml = '';
+                if (game.rating) {
+                    const rating = game.rating;
+                    const fullStars = Math.floor(rating);
+                    const halfStar = rating % 1 >= 0.5 ? 1 : 0;
+                    const emptyStars = 5 - fullStars - halfStar;
+                    
+                    ratingHtml = `
+                        <div class="card-rating">
+                            <span class="card-stars">
+                                ${'★'.repeat(fullStars)}${halfStar ? '⭐' : ''}${'☆'.repeat(emptyStars)}
+                            </span>
+                            <span class="card-score">${rating.toFixed(1)}</span>
+                        </div>
+                    `;
+                }
+                
                 // 创建游戏卡片HTML，使用智能图片加载
                 const gameCard = document.createElement('div');
                 gameCard.className = 'game-card';
@@ -1098,20 +1316,22 @@
                             alt="${game.title}" 
                             onerror="this.handleImageError(this, '${game.id}')"
                         >
-                        <div class="play-overlay">
-                            <span class="play-btn"><i class="fas fa-play-circle"></i></span>
+                        <div class="game-overlay">
+                            <button class="play-btn">Start Game</button>
                         </div>
                     </div>
                     <div class="game-info">
                         <h3 class="game-title">${game.title}</h3>
+                        ${ratingHtml}
                         <p class="game-desc">${game.shortDescription || (game.description && game.description.length > 60 ? game.description.substring(0, 60) + '...' : game.description || '')}</p>
-                        <button class="play-game-btn" onclick="launchGame('${game.id}')">开始游戏</button>
                     </div>
                 `;
                 
                 // 添加点击事件
                 gameCard.addEventListener('click', (e) => {
-                    if (!e.target.closest('.play-game-btn')) {
+                    if (!e.target.closest('.play-btn')) {
+                        launchGame(game.id);
+                    } else {
                         launchGame(game.id);
                     }
                 });
@@ -1122,38 +1342,48 @@
             
             // 添加图片加载错误处理函数
             HTMLImageElement.prototype.handleImageError = function(imgElement, gameId) {
-                const currentSrc = imgElement.src;
-                console.log(`图片加载失败: ${currentSrc}`);
-                
-                // 尝试不同的URL格式
-                if (currentSrc.includes('Teaser.jpg')) {
-                    // 尝试不带Teaser的URL
-                    const newSrc = currentSrc.replace('Teaser.jpg', '.jpg');
-                    console.log(`尝试不带Teaser的URL: ${newSrc}`);
-                    imgElement.src = newSrc;
-                } else if (currentSrc.includes('.jpg') && !currentSrc.includes('Teaser')) {
-                    // 如果不带Teaser的URL也失败，尝试全小写的版本
-                    const gameIdLower = gameId.toLowerCase();
-                    const formattedGameId = gameIdLower.split('-')
-                        .map(part => part.charAt(0).toUpperCase() + part.slice(1))
-                        .join('');
-                    const newSrc = `https://img.cdn.famobi.com/portal/html5games/images/tmp/${formattedGameId}.jpg`;
-                    console.log(`尝试小写ID的URL: ${newSrc}`);
-                    imgElement.src = newSrc;
-                } else {
-                    // 所有尝试都失败，使用默认占位图
-                    imgElement.src = 'images/game-placeholder.jpg';
-                }
-                
-                // 防止无限循环
-                imgElement.onerror = function() {
-                    this.onerror = null;
-                    this.src = 'images/game-placeholder.jpg';
-                };
+                // ... 现有代码保持不变 ...
             };
         }
 
-        // 修改为显示游戏预览信息，用户确认后再打开游戏
+        // 加载所有分类的游戏
+        function loadAllCategories() {
+            // 重新初始化游戏数据
+            initializeGames();
+            
+            // 加载各个分类的游戏
+            loadCategoryGames('featured', featuredGames);
+            loadCategoryGames('action', games.action);
+            loadCategoryGames('puzzle', games.puzzle);
+            loadCategoryGames('sports', games.sports);
+            loadCategoryGames('strategy', games.strategy);
+            
+            console.log("所有游戏分类已加载完成");
+        }
+
+        // 设置分类导航
+        function setupCategoryNavigation() {
+            const categoryLinks = document.querySelectorAll('.category-link');
+            
+            categoryLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    
+                    // 移除所有active类
+                    categoryLinks.forEach(el => el.classList.remove('active'));
+                    document.querySelectorAll('.game-section').forEach(el => el.classList.remove('active'));
+                    
+                    // 添加active类到当前元素
+                    this.classList.add('active');
+                    
+                    // 显示对应的游戏区域
+                    const category = this.getAttribute('data-category');
+                    document.getElementById(category).classList.add('active');
+                });
+            });
+        }
+
+        // 启动游戏预览
         function launchGame(gameId) {
             const game = famobiGameLinks[gameId];
             if (!game) {
@@ -1176,43 +1406,59 @@
             // 创建游戏特点HTML
             const featuresHtml = game.features ? 
                 `<div class="game-features">
-                    <h4>游戏特点</h4>
+                    <h4>Game Features</h4>
                     <ul>${game.features.map(feature => `<li>${feature}</li>`).join('')}</ul>
                 </div>` : '';
             
             // 创建游戏玩法HTML
             const howToPlayHtml = game.howToPlay ? 
                 `<div class="game-how-to-play">
-                    <h4>如何游玩</h4>
+                    <h4>How To Play</h4>
                     <p>${game.howToPlay}</p>
                 </div>` : '';
             
-            // 创建游戏预览内容 - 将详情整合到右侧，调整顺序
+            // 创建评分星星HTML
+            const rating = game.rating || 0; // 如果没有评分，默认为0
+            const fullStars = Math.floor(rating);
+            const halfStar = rating % 1 >= 0.5 ? 1 : 0;
+            const emptyStars = 5 - fullStars - halfStar;
+            
+            const starsHtml = `
+                <div class="game-rating">
+                    <div class="rating-stars">
+                        ${'★'.repeat(fullStars)}${halfStar ? '⭐' : ''}${'☆'.repeat(emptyStars)}
+                    </div>
+                    <span class="rating-score">${rating.toFixed(1)}</span>
+                </div>
+            `;
+            
+            // 创建游戏预览内容
             gameContainer.innerHTML = `
                 <div class="game-preview">
                     <img src="${game.thumbnail}" alt="${game.title}" class="game-preview-image">
                     <div class="game-preview-info">
                         <h3>${game.title}</h3>
+                        ${rating ? starsHtml : '<div class="game-rating">No rating yet</div>'}
                         <div class="game-description">
                             <p>${game.description}</p>
                         </div>
                         ${howToPlayHtml}
                         ${featuresHtml}
                         <button class="play-external-btn" onclick="openGameExternal('${game.id}')">
-                            开始游戏
+                            Play Game
                         </button>
                     </div>
                 </div>
             `;
             
-            // 隐藏或删除单独的游戏详情区域
+            // 隐藏游戏详情区域
             const gameDetails = document.getElementById('game-details');
             if (gameDetails) {
                 gameDetails.style.display = 'none';
             }
         }
 
-        // 添加在新窗口中打开游戏的函数
+        // 在新窗口中打开游戏
         function openGameExternal(gameId) {
             const game = famobiGameLinks[gameId];
             if (!game) return;
@@ -1220,36 +1466,36 @@
             window.open(game.url, '_blank');
         }
 
-        // 修改关闭游戏函数，移除页面跳转监听
+        // 关闭游戏预览
         function closeGame() {
             const gamePlayer = document.getElementById('game-player');
             gamePlayer.style.display = 'none';
             
-            // 清空游戏容器，避免游戏继续在后台运行
+            // 清空游戏容器
             document.querySelector('.game-container').innerHTML = '';
         }
 
-        // 切换游戏详情的展开/折叠状态
+        // 切换游戏详情显示
         function toggleGameDetails() {
             const gameDetails = document.getElementById('game-details');
             const toggleBtn = document.querySelector('.game-details-toggle');
             
             if (gameDetails.classList.contains('collapsed')) {
                 gameDetails.classList.remove('collapsed');
-                toggleBtn.textContent = '隐藏详情 ▼';
+                toggleBtn.textContent = 'Hide Details ▼';
             } else {
                 gameDetails.classList.add('collapsed');
-                toggleBtn.textContent = '显示详情 ▲';
+                toggleBtn.textContent = 'Show Details ▲';
             }
         }
 
         // 搜索游戏
         function searchGames() {
-            const searchInput = document.getElementById('search-input');
+            const searchInput = document.querySelector('.search-box input');
             const searchTerm = searchInput.value.trim().toLowerCase();
             
             if (!searchTerm) {
-                alert('请输入搜索内容');
+                alert('Please enter a search term');
                 return;
             }
             
@@ -1273,13 +1519,13 @@
             
             // 更新标题
             document.querySelector('#featured .section-header h2').textContent = 
-                `搜索结果: ${searchTerm} (${searchResults.length}个游戏)`;
+                `Search Results: ${searchTerm} (${searchResults.length} games)`;
             
             // 加载搜索结果
             loadCategoryGames('featured', searchResults);
         }
 
-        // 从famobiGameLinks对象中删除三个游戏
+        // 删除指定游戏
         function removeGamesFromList() {
             // 删除点球大战，1v1-lol，塔防这三个游戏
             delete famobiGameLinks["penalty-kicks"];
@@ -1287,18 +1533,9 @@
             delete famobiGameLinks["tower-defense"];
             
             console.log("已删除指定的三个游戏");
-            
-            // 重新加载所有分类的游戏列表
-            loadAllCategories();
         }
 
-        // 在页面加载完成后调用
-        document.addEventListener('DOMContentLoaded', function() {
-            // 调用删除函数
-            removeGamesFromList();
-        });
-
-        // 添加响应式iframe尺寸调整功能
+        // 调整游戏框架大小
         function resizeGameFrame() {
             const gameFrame = document.getElementById('game-iframe');
             if (gameFrame) {
@@ -1309,8 +1546,47 @@
             }
         }
 
-        // 添加窗口大小变化监听
+        // 添加搜索按钮事件
+        document.querySelector('.search-box button').addEventListener('click', searchGames);
+
+        // 添加搜索框回车事件
+        document.querySelector('.search-box input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchGames();
+            }
+        });
+
+        // 窗口大小变化时调整iframe大小
         window.addEventListener('resize', resizeGameFrame);
+
+        // 页面加载完成后执行初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("页面加载完成，开始初始化...");
+            
+            // 初始化游戏数据
+            initializeGames();
+            
+            // 加载所有分类的游戏
+            loadCategoryGames('featured', featuredGames);
+            loadCategoryGames('action', games.action);
+            loadCategoryGames('puzzle', games.puzzle);
+            loadCategoryGames('sports', games.sports);
+            loadCategoryGames('strategy', games.strategy);
+            
+            // 设置分类导航
+            setupCategoryNavigation();
+            
+            // 为关闭按钮绑定点击事件
+            const closeButton = document.querySelector('.close-game-btn');
+            if (closeButton) {
+                closeButton.addEventListener('click', closeGame);
+            }
+            
+            // 移除指定游戏
+            removeGamesFromList();
+            
+            console.log("初始化完成！");
+        });
     </script>
 </body>
 </html> 
