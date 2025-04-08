@@ -16,9 +16,25 @@
         }
         
         body {
-            background-color: #f5f5f7;
+            /* 移除原来的纯色背景 */
+            background: linear-gradient(135deg, #ffefba, #a1c4fd, #c2e9fb, #ffdde1);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
             color: #1d1d1f;
             line-height: 1.6;
+        }
+        
+        /* 添加渐变动画 */
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
         
         /* 头部样式 */
@@ -29,7 +45,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
             padding: 15px 0;
         }
         
@@ -46,6 +62,13 @@
             align-items: center;
         }
         
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 2px 0;
+        }
+        
         .logo h1 {
             font-size: 1.8rem;
             font-weight: 700;
@@ -53,6 +76,38 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+        }
+        
+        .slogan {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            line-height: 1.4;
+            margin: 5px 0 8px;
+            padding: 5px 15px;
+            border-radius: 10px;
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            color: #0066cc;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+            animation: colorshift 8s infinite alternate;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        @keyframes colorshift {
+            0% {
+                background: linear-gradient(90deg, rgba(255,107,107,0.2), rgba(78,205,196,0.2), rgba(122,134,203,0.2));
+                border-color: rgba(255,107,107,0.3);
+            }
+            50% {
+                background: linear-gradient(90deg, rgba(78,205,196,0.2), rgba(122,134,203,0.2), rgba(255,107,107,0.2));
+                border-color: rgba(78,205,196,0.3);
+            }
+            100% {
+                background: linear-gradient(90deg, rgba(122,134,203,0.2), rgba(255,107,107,0.2), rgba(78,205,196,0.2));
+                border-color: rgba(122,134,203,0.3);
+            }
         }
         
         .search-box {
@@ -97,18 +152,19 @@
             margin: 20px auto;
             width: 90%;
             max-width: 1200px;
-            background: white;
+            background: rgba(255, 255, 255, 0.85); /* 略微透明的白色 */
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px); /* 背景模糊效果 */
         }
         
         /* 侧边栏样式 */
         .sidebar {
             width: 250px;
-            background: white;
+            background: rgba(255, 255, 255, 0.7);
             padding: 20px 0;
-            border-right: 1px solid #e8e8ed;
+            border-right: 1px solid rgba(232, 232, 237, 0.5);
         }
         
         .side-nav h3 {
@@ -147,28 +203,6 @@
             color: #007aff;
         }
         
-        .tag-cloud {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            padding: 10px 20px;
-        }
-        
-        .tag {
-            background: #f0f0f5;
-            color: #6e6e73;
-            border-radius: 15px;
-            padding: 5px 12px;
-            font-size: 0.8rem;
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-        
-        .tag:hover {
-            background: #e0e0e5;
-            color: #007aff;
-        }
-        
         /* 内容区域样式 */
         .content {
             flex: 1;
@@ -203,10 +237,12 @@
         }
         
         .game-card {
-            background: white;
+            background: linear-gradient(135deg, rgba(255,255,255,0.7), rgba(240,240,255,0.9));
+            border: 1px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(5px);
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
             transition: transform 0.3s, box-shadow 0.3s;
         }
         
@@ -252,22 +288,27 @@
         }
         
         .play-btn {
-            background: #007aff;
-            color: white;
+            background: linear-gradient(90deg, #ff6b6b, #ff8e53);
             border: none;
+            color: white;
             padding: 8px 20px;
-            border-radius: 20px;
-            font-weight: 500;
+            border-radius: 25px;
+            font-weight: 600;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(255,107,107,0.3);
         }
         
         .play-btn:hover {
-            background: #0062cc;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255,107,107,0.4);
+            background: linear-gradient(90deg, #ff5252, #ff7043);
         }
         
         .game-info {
+            background: linear-gradient(135deg, rgba(255,255,255,0.5), rgba(240,248,255,0.7));
             padding: 15px;
+            border-top: 1px solid rgba(255,255,255,0.3);
         }
         
         .game-info h3 {
@@ -315,28 +356,46 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.9);
+            background: linear-gradient(45deg, rgba(255,184,202,0.95), rgba(107,213,255,0.95), rgba(255,222,125,0.95));
+            background-size: 300% 300%;
+            animation: gamePlayerGradient 20s ease infinite;
             z-index: 1000;
-            display: flex;
+            display: none;
             flex-direction: column;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+        
+        @keyframes gamePlayerGradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
         
         .player-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-            background: rgba(0, 0, 0, 0.8);
-            border-radius: 10px 10px 0 0;
-        }
-        
-        .player-header h2 {
+            /* 删除原来的标题栏样式 */
+            /* background: linear-gradient(90deg, rgba(78,205,196,0.8), rgba(122,134,203,0.8));
             color: white;
-            font-size: 1.6rem;
-            margin-right: auto;
+            padding: 10px 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+            .player-header h2 {
+                color: white;
+                font-size: 1.6rem;
+                margin-right: auto;
+            } */
         }
         
         .close-game-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -350,9 +409,7 @@
             justify-content: center;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
             transition: all 0.3s ease;
-            position: relative;
-            outline: none;
-            margin-left: 10px;
+            z-index: 1100; /* 确保按钮在最上层 */
         }
         
         .close-game-btn:hover {
@@ -366,11 +423,7 @@
         }
         
         .game-container {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
+            padding-top: 20px; /* 添加顶部填充，避免与关闭按钮重叠 */
         }
         
         .clean-game-container {
@@ -404,12 +457,15 @@
         
         /* 游戏详情 */
         .game-details {
-            position: relative;
-            background: #1d1d1f;
-            color: white;
-            max-height: 40%;
-            overflow-y: auto;
-            transition: max-height 0.3s;
+            background: linear-gradient(135deg, rgba(240,248,255,0.7), rgba(255,255,255,0.8));
+            max-width: 1000px;
+            width: 90%;
+            margin: 0 auto;
+            border-radius: 0 0 15px 15px;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-top: none;
         }
         
         .game-details.collapsed {
@@ -417,21 +473,17 @@
         }
         
         .game-details-toggle {
-            position: sticky;
-            top: 0;
-            width: 100%;
-            background: #1d1d1f;
+            background: linear-gradient(90deg, rgba(122,134,203,0.8), rgba(78,205,196,0.8));
+            color: white;
             border: none;
-            color: #999;
+            width: 100%;
             padding: 10px;
-            text-align: center;
             cursor: pointer;
-            font-size: 0.9rem;
-            z-index: 10;
+            transition: all 0.3s;
         }
         
         .game-details-toggle:hover {
-            color: white;
+            background: linear-gradient(90deg, rgba(122,134,203,1), rgba(78,205,196,1));
         }
         
         #game-details-content {
@@ -494,12 +546,13 @@
         
         /* 页脚样式 */
         footer {
-            background: white;
+            background: rgba(255, 255, 255, 0.7);
+            margin-top: 30px;
             padding: 20px 0;
             text-align: center;
             color: #6e6e73;
             font-size: 0.9rem;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+            backdrop-filter: blur(5px);
         }
         
         /* 适应不同设备 */
@@ -549,6 +602,11 @@
             .search-box input {
                 width: 150px;
             }
+            
+            .slogan {
+                font-size: 1.2rem;
+                padding: 4px 12px;
+            }
         }
         
         /* 添加到现有样式表中 */
@@ -582,167 +640,117 @@
             transition: opacity 0.5s ease;
         }
         
-        /* 修改游戏预览样式为左右分列 */
+        /* 修改游戏预览样式、文字颜色和布局 */
         .game-preview {
             display: flex;
-            flex-direction: row; /* 改为水平排列 */
-            align-items: flex-start; /* 顶部对齐 */
-            padding: 30px;
-            background: rgba(5, 5, 15, 0.9);
-            border-radius: 10px;
-            color: white;
-            gap: 30px; /* 左右两列之间的间距 */
+            flex-direction: row;
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(240,248,255,0.95));
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+            overflow: hidden;
+            max-width: 1000px;
+            width: 90%;
+            margin: 10px auto;
+            padding: 20px;
+            color: #333;
+            gap: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.5);
         }
         
+        /* 游戏预览图片区域样式优化 */
         .game-preview-image {
-            max-width: 45%; /* 控制图片宽度 */
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            flex-shrink: 0; /* 防止图片被压缩 */
+            width: 35%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
+        /* 游戏信息区域样式优化 */
         .game-preview-info {
-            flex: 1; /* 占据剩余空间 */
-            text-align: left; /* 文本左对齐 */
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            color: #333;
         }
         
+        /* 游戏预览标题样式优化 */
         .game-preview-info h3 {
             font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: #00f3ff;
+            margin-bottom: 10px;
+            color: #222;
+            font-weight: 700;
         }
         
-        /* 响应式调整 */
-        @media (max-width: 768px) {
-            .game-preview {
-                flex-direction: column; /* 在小屏幕上改回垂直排列 */
-                padding: 20px;
-            }
-            
-            .game-preview-image {
-                max-width: 100%;
-                margin-bottom: 20px;
-            }
-            
-            .game-preview-info {
-                width: 100%;
-            }
+        /* 游戏描述文字样式优化 */
+        .game-description {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            line-height: 1.4;
+            color: #444;
+            max-height: 80px;
+            overflow-y: auto;
         }
         
-        .play-external-btn {
-            background: linear-gradient(45deg, #007aff, #00c6ff);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 25px;
+        /* 游戏特点和玩法区域样式优化 */
+        .game-how-to-play, .game-features {
+            background: rgba(255,255,255,0.5);
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        /* 特性和玩法标题样式优化 */
+        .game-how-to-play h4, .game-features h4 {
+            color: #222;
+            margin-bottom: 5px;
             font-size: 1.1rem;
-            margin-top: 20px;
+        }
+        
+        /* 游戏特性列表样式优化 */
+        .game-features ul {
+            padding-left: 20px;
+            margin: 5px 0;
+        }
+        
+        .game-features li {
+            margin-bottom: 3px;
+            font-size: 0.95rem;
+        }
+        
+        /* 游戏评分样式优化 */
+        .game-rating {
+            margin-bottom: 10px;
+        }
+        
+        /* 播放按钮样式优化 */
+        .play-external-btn {
+            background: linear-gradient(90deg, #ff6b6b, #ff8e53);
+            border: none;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1rem;
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(0, 122, 255, 0.4);
+            box-shadow: 0 4px 10px rgba(255,107,107,0.3);
+            margin-top: 5px;
+            align-self: flex-start;
         }
         
-        .play-external-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 7px 20px rgba(0, 122, 255, 0.6);
+        /* 游戏预览页面头部优化 */
+        .player-header {
+            /* 删除原来的标题栏样式 */
+            /* padding: 10px 20px; */
         }
         
-        /* 为游戏详情区域添加样式 */
-        .game-description {
-            margin-bottom: 20px;
-        }
-        
-        .game-features, .game-how-to-play {
-            margin-bottom: 20px;
-        }
-        
-        .game-preview-info h4 {
-            color: #00f3ff;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-        
-        .game-preview-info ul {
-            list-style-position: inside;
-            margin-left: 5px;
-            margin-bottom: 15px;
-        }
-        
-        .game-preview-info li {
-            margin-bottom: 5px;
-        }
-        
-        /* 当内容过多时添加滚动条 */
-        .game-preview-info {
-            max-height: 600px;
+        /* 如果游戏特性列表项较多，可滚动显示 */
+        .game-features {
+            max-height: 100px;
             overflow-y: auto;
-            padding-right: 15px;
-        }
-        
-        /* 自定义滚动条样式 */
-        .game-preview-info::-webkit-scrollbar {
-            width: 6px;
-        }
-        
-        .game-preview-info::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.1);
-            border-radius: 3px;
-        }
-        
-        .game-preview-info::-webkit-scrollbar-thumb {
-            background: rgba(0, 255, 255, 0.3);
-            border-radius: 3px;
-        }
-        
-        .game-preview-info::-webkit-scrollbar-thumb:hover {
-            background: rgba(0, 255, 255, 0.5);
-        }
-        
-        /* 添加游戏评分星星样式 */
-        .game-rating {
-            display: flex;
-            align-items: center;
-            margin: 8px 0 15px;
-            color: #ffffff;
-        }
-        
-        .rating-stars {
-            color: #FFD700; /* 金色星星 */
-            font-size: 1.3rem;
-            letter-spacing: 3px;
-            margin-right: 10px;
-        }
-        
-        .rating-score {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 3px 8px;
-            border-radius: 10px;
-            font-size: 0.9rem;
-            font-weight: bold;
-        }
-        
-        /* 游戏卡片评分样式 */
-        .card-rating {
-            display: flex;
-            align-items: center;
-            margin: 5px 0 8px;
-        }
-        
-        .card-stars {
-            color: #FFD700; /* 金色星星 */
-            font-size: 1rem;
-            letter-spacing: 2px;
-            margin-right: 8px;
-        }
-        
-        .card-score {
-            background: rgba(0, 0, 0, 0.1);
-            color: #333;
-            padding: 2px 6px;
-            border-radius: 10px;
-            font-size: 0.8rem;
-            font-weight: bold;
         }
     </style>
 </head>
@@ -751,6 +759,7 @@
         <div class="container">
             <div class="logo">
                 <h1>Colorful Game World</h1>
+                <p class="slogan">The Best Free Online Games - No Download Required</p>
             </div>
             <div class="search-box">
                 <input type="text" placeholder="Search for games...">
@@ -771,18 +780,6 @@
                     <li><a href="#" class="category-link" data-category="sports">Sports Games</a></li>
                     <li><a href="#" class="category-link" data-category="strategy">Strategy Games</a></li>
                 </ul>
-                
-                <h3>Popular Tags</h3>
-                <div class="tag-cloud">
-                    <a href="#" class="tag">Arcade</a>
-                    <a href="#" class="tag">Racing</a>
-                    <a href="#" class="tag">Puzzle</a>
-                    <a href="#" class="tag">Skill</a>
-                    <a href="#" class="tag">Multiplayer</a>
-                    <a href="#" class="tag">Adventure</a>
-                    <a href="#" class="tag">Strategy</a>
-                    <a href="#" class="tag">Physics</a>
-                </div>
             </nav>
         </aside>
 
@@ -840,18 +837,9 @@
 
             <!-- 游戏播放区域 -->
             <section id="game-player" class="game-player" style="display: none;">
-                <div class="player-header">
-                    <h2 id="current-game-title">Game Title</h2>
-                    <button class="close-game-btn">&times;</button>
-                </div>
+                <button class="close-game-btn" onclick="closeGame()">&times;</button>
                 <div class="game-container">
                     <!-- 游戏将在这里加载 -->
-                </div>
-                <div id="game-details" class="game-details collapsed">
-                    <button class="game-details-toggle" onclick="toggleGameDetails()">Show Details ▲</button>
-                    <div id="game-details-content">
-                        <!-- 游戏详情内容 -->
-                    </div>
                 </div>
             </section>
 
@@ -865,7 +853,24 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 Colorful Game World. All games are free to play online. No download required.</p>
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>About Colorful Game World</h3>
+                    <p>We offer the best free online games that you can play instantly in your browser. No downloads, no installations - just click and play!</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Game Categories</h3>
+                    <ul>
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Puzzle</a></li>
+                        <li><a href="#">Sports</a></li>
+                        <li><a href="#">Strategy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Colorful Game World. All games are free to play online.</p>
+            </div>
         </div>
     </footer>
 
@@ -890,7 +895,7 @@
                 url: "https://play.famobi.com/slope",
                 category: "action",
                 thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/SlopeTeaser.jpg",
-                description: "A high-speed 3D ball rolling game that tests your reaction skills. Free to play online with no download required.",
+                description: "A high-speed 3D ball rolling game that tests your reaction skills. Free online game with no download required.",
                 features: ["Endless Mode", "High Speed Challenge", "Simple Controls", "Increasing Difficulty"],
                 howToPlay: "Use arrow keys or AD to control the ball left and right. Avoid obstacles and go as far as you can.",
                 tags: ["3D", "Skill", "Speed"],
@@ -914,7 +919,7 @@
                 url: "https://play.famobi.com/2048",
                 category: "puzzle",
                 thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/2048Teaser.jpg",
-                description: "Classic number merging game where you combine matching numbers to create larger ones. Aim to get the 2048 tile in this free online puzzle.",
+                description: "Classic number merging game where you combine matching numbers to create larger ones. Free online puzzle game that you can play instantly.",
                 features: ["Simple Rules", "Strategic Thinking", "Endless Challenge"],
                 howToPlay: "Use arrow keys to move all tiles. When two tiles with the same number touch, they merge into their sum.",
                 tags: ["Numbers", "Strategy", "Brain"],
@@ -938,7 +943,7 @@
                 url: "https://play.famobi.com/words-of-wonders",
                 category: "puzzle",
                 thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/WordsOfWondersTeaser.jpg",
-                description: "Find letter combinations to form words and unlock world wonders. Free to play online with no registration needed.",
+                description: "Find letter combinations to form words and unlock world wonders. Free online word game with no registration required.",
                 features: ["Numerous Levels", "Vocabulary Challenge", "World Wonders Introduction"],
                 howToPlay: "Rotate the letter wheel to create words and fill in the blanks to complete each stage.",
                 tags: ["Words", "Educational", "Puzzle"],
@@ -950,7 +955,7 @@
                 url: "https://play.famobi.com/8ball-online",
                 category: "sports",
                 thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/8BallOnlineTeaser.jpg",
-                description: "Online pool game where you can challenge the computer or play against friends. Free to play online with no download required.",
+                description: "Online pool game where you can challenge the computer or play with friends. Free online sports game accessible on any device.",
                 features: ["Realistic physics engine", "Multiplayer mode", "Simple controls"],
                 howToPlay: "Aim and drag the mouse or touch screen to set the power and direction, then release the cue ball.",
                 tags: ["Pool", "Sports", "Skill"],
@@ -962,7 +967,7 @@
                 url: "https://play.famobi.com/tap-tap-dunk",
                 category: "sports",
                 thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/TapTapDunkTeaser.jpg",
-                description: "Quickly tap the screen to let the ball enter the basket and experience an exciting basketball dunk game. Free to play online with no download required.",
+                description: "Quickly tap the screen to get the ball into the hoop. Experience this exciting free online basketball game.",
                 features: ["Simple controls", "Various challenges", "Different courts"],
                 howToPlay: "Tap the screen on the left or right side to control the ball direction and aim for a precise shot.",
                 tags: ["Basketball", "Skill", "Reaction"],
@@ -974,7 +979,7 @@
                 url: "https://play.famobi.com/candy-bubble",
                 category: "strategy",
                 thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/CandyBubbleTeaser.jpg",
-                description: "Match up candies of the same color to create a chain reaction. Free to play online with no download required.",
+                description: "Match and pop colorful candy bubbles in this addictive free online puzzle game. No download or installation needed.",
                 features: ["Numerous levels", "Various special candies", "Time challenge"],
                 howToPlay: "Aim and shoot bubbles to connect three or more candies of the same color to make them disappear.",
                 tags: ["Matching", "Bubbles", "Candies"],
@@ -998,7 +1003,7 @@
                 url: "https://play.famobi.com/tower-crash-3d",
                 category: "puzzle",
                 thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/TowerCrash3dTeaser.jpg",
-                description: "In this exciting 3D physics game, destroy as many towers as possible in various levels and gameplay styles.",
+                description: "Knock down towers by launching balls in this physics-based free online game. Challenge yourself with different levels.",
                 features: ["3D physics effect", "Various levels", "Strategic gameplay"]
             },
             "gold-mine": {
@@ -1007,7 +1012,7 @@
                 url: "https://play.famobi.com/gold-mine",
                 category: "puzzle",
                 thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/GoldMineTeaser.jpg",
-                description: "Collect gold and gems in this classic mining game. Free to play online with no download required.",
+                description: "Dig for gold and collect precious minerals in this exciting free online adventure game. Play instantly in your browser.",
                 features: ["Strategic gameplay", "Various items", "Increasing difficulty"],
                 howToPlay: "Collect gold and gems in this classic mining game. Free to play online with no download required.",
                 tags: ["Strategic gameplay", "Various items", "Increasing difficulty"],
@@ -1019,7 +1024,7 @@
                 url: "https://play.famobi.com/bubble-woods",
                 category: "puzzle",
                 thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/BubbleWoodsTeaser.jpg",
-                description: "In this bubble shooting game, help the fox rescue his forest friends. Free to play online with no download required.",
+                description: "Help the little fox save his forest friends in this bubble shooter free online game. Perfect for quick gaming sessions.",
                 features: ["Cute characters", "Various levels", "Fun bubble shooting gameplay"],
                 howToPlay: "In this bubble shooting game, help the fox rescue his forest friends. Free to play online with no download required.",
                 tags: ["Cute characters", "Various levels", "Fun bubble shooting gameplay"],
@@ -1031,7 +1036,7 @@
                 url: "https://play.famobi.com/save-the-princess",
                 category: "puzzle",
                 thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/SaveThePrincessTeaser.jpg",
-                description: "In this puzzle game, you need to solve various puzzles to rescue the trapped princess. Free to play online with no download required.",
+                description: "Solve various puzzles to save the trapped princess in this free online game. Play instantly without downloading.",
                 features: ["Various levels", "Puzzle solving", "Beautiful graphics"],
                 howToPlay: "In this puzzle game, you need to solve various puzzles to rescue the trapped princess. Free to play online with no download required.",
                 tags: ["Various levels", "Puzzle solving", "Beautiful graphics"],
@@ -1043,7 +1048,7 @@
                 url: "https://play.famobi.com/peet-a-lock",
                 category: "puzzle",
                 thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/PeetALockTeaser.jpg",
-                description: "Unlock various locks and test your puzzle solving skills! Free to play online with no download required.",
+                description: "Unlock various locks and test your puzzle-solving skills in this free online game. No registration required.",
                 features: ["Numerous levels", "Increasing difficulty", "Puzzle solving challenge"],
                 howToPlay: "Unlock various locks and test your puzzle solving skills! Free to play online with no download required.",
                 tags: ["Numerous levels", "Increasing difficulty", "Puzzle solving challenge"],
@@ -1055,7 +1060,7 @@
                 url: "https://play.famobi.com/pengu-slide",
                 category: "arcade",
                 thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/PenguSlideTeaser.jpg",
-                description: "Control the cute penguin sliding on the ice to collect fish and avoid obstacles. Free to play online with no download required.",
+                description: "Control the cute penguin as it slides on ice to collect fish and avoid obstacles. Free online arcade game for all ages.",
                 features: ["Cute character", "Simple controls", "Rich content"],
                 howToPlay: "Control the cute penguin sliding on the ice to collect fish and avoid obstacles. Free to play online with no download required.",
                 tags: ["Cute character", "Simple controls", "Rich content"],
@@ -1067,7 +1072,7 @@
                 url: "https://play.famobi.com/peet-around",
                 category: "puzzle",
                 thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/PeetAroundTeaser.jpg",
-                description: "Find your way out in the maze, collect more items, and unlock more levels. Free to play online with no download required.",
+                description: "Find your way through mazes, collect more items, and unlock more levels in this free online puzzle game.",
                 features: ["Maze exploration", "Rich levels", "Fun game"],
                 howToPlay: "Find your way out in the maze, collect more items, and unlock more levels. Free to play online with no download required.",
                 tags: ["Maze exploration", "Rich levels", "Fun game"],
@@ -1079,7 +1084,7 @@
                 url: "https://play.famobi.com/emoji-flow",
                 category: "puzzle",
                 thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/EmojiFlowTeaser.jpg",
-                description: "Connect the same emoji to create a flow and complete various challenges. Free to play online with no download required.",
+                description: "Connect matching emojis to create flows and complete various challenges. Free online puzzle game with no download needed.",
                 features: ["Matching game", "Emojis", "Rich levels"],
                 howToPlay: "Connect the same emoji to create a flow and complete various challenges. Free to play online with no download required.",
                 tags: ["Matching game", "Emojis", "Rich levels"],
@@ -1091,7 +1096,7 @@
                 url: "https://play.famobi.com/neon-swing",
                 category: "arcade",
                 thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/NeonSwingTeaser.jpg",
-                description: "Swing in the neon environment and collect gems while avoiding obstacles. Free to play online with no download required.",
+                description: "Swing in the neon environment, collect gems and avoid obstacles. Free online arcade game with simple controls.",
                 features: ["Reaction test", "Neon style", "Simple controls"],
                 howToPlay: "Swing in the neon environment and collect gems while avoiding obstacles. Free to play online with no download required.",
                 tags: ["Reaction test", "Neon style", "Simple controls"],
@@ -1103,7 +1108,7 @@
                 url: "https://play.famobi.com/neon-tower",
                 category: "arcade",
                 thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/NeonTowerTeaser.jpg",
-                description: "Climb the neon tower while avoiding obstacles and reach the highest point. Free to play online with no download required.",
+                description: "Climb the rising neon tower, avoid obstacles and reach the highest point. Free online arcade game with beautiful neon graphics.",
                 features: ["Neon art", "Reaction challenge", "High score competition"],
                 howToPlay: "Climb the neon tower while avoiding obstacles and reach the highest point. Free to play online with no download required.",
                 tags: ["Neon art", "Reaction challenge", "High score competition"],
@@ -1115,7 +1120,7 @@
                 url: "https://play.famobi.com/drift-dudes",
                 category: "racing",
                 thumbnail: "https://img.cdn.famobi.com/portal/html5games/images/tmp/DriftDudesTeaser.jpg",
-                description: "Experience an exciting car drifting game and unlock different vehicles and tracks. Free to play online with no download required.",
+                description: "Experience exciting car drifting, unlock different vehicles and tracks in this free online racing game.",
                 features: ["Drifting skill", "Various vehicles", "Racing challenge"],
                 howToPlay: "Experience an exciting car drifting game and unlock different vehicles and tracks. Free to play online with no download required.",
                 tags: ["Drifting skill", "Various vehicles", "Racing challenge"],
@@ -1397,9 +1402,6 @@
             const gamePlayer = document.getElementById('game-player');
             gamePlayer.style.display = 'flex';
             
-            // 设置游戏标题
-            document.getElementById('current-game-title').textContent = game.title;
-            
             // 获取游戏容器
             const gameContainer = document.querySelector('.game-container');
             
@@ -1506,13 +1508,12 @@
             document.querySelector('.category-link[data-category="featured"]').classList.add('active');
             document.getElementById('featured').classList.add('active');
             
-            // 获取搜索结果
+            // 获取搜索结果 - 删除标签相关的搜索条件
             const searchResults = [];
             for (const gameId in famobiGameLinks) {
                 const game = famobiGameLinks[gameId];
                 if (game.title.toLowerCase().includes(searchTerm) || 
-                    game.description.toLowerCase().includes(searchTerm) || 
-                    (game.tags && game.tags.some(tag => tag.toLowerCase().includes(searchTerm)))) {
+                    game.description.toLowerCase().includes(searchTerm)) {
                     searchResults.push(game);
                 }
             }
